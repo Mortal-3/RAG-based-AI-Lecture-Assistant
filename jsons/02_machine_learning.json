@@ -1,0 +1,18 @@
+{
+    "document_id": "ml_001",
+    "title": "Machine Learning Fundamentals",
+    "chunks": [
+        {
+            "text": "Machine learning enables computers to learn patterns from data without being explicitly programmed for every task."
+        },
+        {
+            "text": "Supervised learning uses labeled datasets to train predictive models for classification and regression problems."
+        },
+        {
+            "text": "Unsupervised learning identifies hidden structures in data using clustering and dimensionality reduction techniques."
+        },
+        {
+            "text": "Reinforcement learning trains an agent to make decisions by maximizing cumulative rewards through interaction with an environment."
+        }
+    ]
+}

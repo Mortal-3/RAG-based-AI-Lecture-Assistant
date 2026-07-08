@@ -1,0 +1,21 @@
+{
+    "document_id": "rag_001",
+    "title": "Retrieval-Augmented Generation",
+    "chunks": [
+        {
+            "text": "Retrieval-Augmented Generation (RAG) combines information retrieval with large language models to generate accurate and context-aware responses."
+        },
+        {
+            "text": "Documents are split into smaller chunks before embeddings are generated for each chunk."
+        },
+        {
+            "text": "The generated embeddings are stored in a vector database, allowing efficient semantic similarity searches."
+        },
+        {
+            "text": "When a user submits a query, the system retrieves the most relevant chunks and provides them as context to the language model."
+        },
+        {
+            "text": "RAG reduces hallucinations by grounding responses in retrieved documents instead of relying solely on the model's internal knowledge."
+        }
+    ]
+}

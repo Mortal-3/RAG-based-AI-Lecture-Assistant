@@ -1,0 +1,21 @@
+{
+    "document_id": "cloud_001",
+    "title": "Cloud Computing",
+    "chunks": [
+        {
+            "text": "Cloud computing provides on-demand access to computing resources such as servers, storage, databases, and networking over the internet."
+        },
+        {
+            "text": "Infrastructure as a Service (IaaS) allows users to rent virtual machines, storage, and networking resources."
+        },
+        {
+            "text": "Platform as a Service (PaaS) provides a managed environment for developing, testing, and deploying applications."
+        },
+        {
+            "text": "Software as a Service (SaaS) delivers fully managed applications that users access through a web browser."
+        },
+        {
+            "text": "Major cloud providers include Amazon Web Services (AWS), Microsoft Azure, and Google Cloud Platform (GCP)."
+        }
+    ]
+}

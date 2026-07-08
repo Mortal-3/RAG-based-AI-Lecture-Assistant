@@ -1,0 +1,15 @@
+{
+    "document_id": "ai_001",
+    "title": "Artificial Intelligence Basics",
+    "chunks": [
+        {
+            "text": "Artificial Intelligence (AI) is a branch of computer science that focuses on creating systems capable of performing tasks that normally require human intelligence."
+        },
+        {
+            "text": "AI techniques include machine learning, deep learning, natural language processing, computer vision, and robotics."
+        },
+        {
+            "text": "Applications of AI include virtual assistants, recommendation systems, fraud detection, autonomous vehicles, and healthcare diagnostics."
+        }
+    ]
+}

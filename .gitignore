@@ -1,0 +1,34 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+aienv/
+venv/
+ENV/
+env/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs and temp files
+*.log
+*.tmp
+*.temp
+
+# ffmpeg outputs
+*.mp3
+
+# Python packaging
+*.egg-info/
+dist/
+build/
+
+# IDE files
+.vscode/
+.idea/

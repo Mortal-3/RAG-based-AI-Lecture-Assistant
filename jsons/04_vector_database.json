@@ -1,0 +1,24 @@
+{
+    "document_id": "vector_001",
+    "title": "Vector Databases and Embeddings",
+    "chunks": [
+        {
+            "text": "An embedding is a numerical representation of text, images, or other data in the form of a vector."
+        },
+        {
+            "text": "Vector databases store embeddings and allow fast similarity searches using methods such as cosine similarity."
+        },
+        {
+            "text": "Embeddings capture the semantic meaning of text, enabling similarity searches based on meaning rather than exact keyword matches."
+        },
+        {
+            "text": "Popular vector database systems are used in recommendation engines, semantic search, and Retrieval-Augmented Generation (RAG) applications."
+        },
+        {
+            "text": "Common similarity metrics used in vector databases include cosine similarity, Euclidean distance, and dot product."
+        },
+        {
+            "text": "Before storing data in a vector database, documents are typically split into smaller chunks and converted into embedding vectors using an embedding model."
+        }
+    ]
+}
