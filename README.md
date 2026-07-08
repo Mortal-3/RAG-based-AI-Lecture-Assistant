@@ -1,100 +1,105 @@
 # RAG based AI Lecture Assistant
 
-This project turns recorded lecture videos into a practical study tool. It extracts speech from videos, transcribes the audio into searchable text, and uses embeddings to help answer questions from your own lecture content.
+This project turns lecture videos into a searchable assistant with a Flask backend and React frontend.
+It extracts audio from lecture videos, transcribes the speech into text, creates embeddings for each segment, and lets you ask questions about the material.
 
-## What this does
+## Project structure
 
-The project follows a simple flow:
+- `backend/` — Flask API for processing videos, creating transcript chunks, generating embeddings, and answering queries.
+- `frontend/` — React app built with Vite for a browser interface.
+- `videos/` — Source lecture videos.
+- `audios/` — Converted MP3 audio files.
+- `jsons/` — Transcript chunk files.
+- `aienv/` — Python virtual environment for backend dependencies.
 
-1. `process_videos.py`
-   - Converts files in `videos/` into MP3 audio files saved in `audios/`.
-   - Uses the video filename to keep the tutorial number and title in the audio name.
+## What this app does
 
-2. `create_chunks.py`
-   - Transcribes the audio with Whisper.
-   - Splits the transcript into timestamped chunks.
-   - Saves each lecture transcript as a JSON file in `jsons/`.
+1. Converts lecture videos into MP3 audio.
+2. Transcribes audio into timestamped text chunks.
+3. Builds semantic embeddings for the transcript chunks.
+4. Lets you ask a question and returns the lecture snippets that match best.
 
-3. `read_chunks.py`
-   - Loads the processed JSON files.
-   - Creates embeddings for each transcript chunk using a local Ollama API.
-   - Lets you ask a question and matches it to the most relevant lecture content.
+## Requirements
 
-## What you need
+- Python 3.11+
+- `ffmpeg` installed and available on `PATH`
+- Local Ollama embedding API running at `http://localhost:11434/api/embed`
+- Node.js and npm or yarn for the frontend
 
-- Python 3.11 or newer
-- `ffmpeg` available on your system `PATH`
-- The `whisper` package
-- `requests`, `tqdm`, `pandas`, `scikit-learn`, `numpy`
-- A running Ollama embedding API at `http://localhost:11434/api/embed`
+## Backend setup
 
-## Setup
-
-1. Activate the project environment:
+1. Activate the Python environment:
 
 ```powershell
 & .\aienv\Scripts\Activate.ps1
 ```
 
-2. Install required packages:
+2. Install backend dependencies:
 
 ```powershell
 python -m pip install -r requirements.txt
 ```
 
-If you don’t have `requirements.txt`, use:
+3. Start the Flask backend:
 
 ```powershell
-python -m pip install whisper requests tqdm pandas scikit-learn numpy
+python backend/app.py
 ```
 
-3. Start Ollama locally so the embedding endpoint works.
+The backend listens at `http://localhost:5051`.
 
-## How to use it
+## Frontend setup
 
-### 1. Convert videos to audio
-
-Put your lecture videos in `videos/` and run:
+1. Open a new terminal and change into the frontend folder:
 
 ```powershell
-python process_videos.py
+cd frontend
 ```
 
-This creates MP3 files in `audios/`.
-
-### 2. Convert audio into text chunks
-
-Run:
+2. Install frontend dependencies:
 
 ```powershell
-python create_chunks.py
+npm install
 ```
 
-This produces JSON files in `jsons/`.
-
-### 3. Ask a question
-
-Run:
+3. Start the React app:
 
 ```powershell
-python read_chunks.py
+npm run dev
 ```
 
-Then type your question and the script will compare it with the transcript chunks.
+The frontend runs at `http://localhost:5173`.
+
+## Docker setup
+
+### Build and run everything with Docker Compose
+
+```powershell
+docker compose up --build
+```
+
+This starts the backend at `http://localhost:5051` and the frontend at `http://localhost:4173`.
+
+### Notes for Docker
+
+- The backend container mounts `videos/`, `audios/`, and `jsons/` from the host.
+- The Flask backend is configured to use `http://host.docker.internal:11434/api/embed` for Ollama.
+
+## Using the app
+
+- Click **Convert Videos** to turn files in `videos/` into audio.
+- Click **Create Transcript Chunks** to transcribe that audio and save JSON files.
+- Enter a question and click **Search Lectures** to find the most relevant transcript snippets.
 
 ## Notes
 
-- `read_chunks.py` needs JSON files in `jsons/` and the Ollama endpoint running.
-- `create_chunks.py` currently transcribes in Hindi (`language="hi"`).
-- `process_videos.py` expects a certain video filename format to extract tutorial number and title.
+- The backend uses Whisper for transcription and Ollama for generating embeddings.
+- The new Flask API exposes the same functionality as the original scripts through endpoints.
+- The frontend is a simple React interface built with Vite.
 
-## Why this is useful
+## Future improvements
 
-This repo makes it easier to learn from lecture videos by turning them into content you can search with natural questions. It helps you quickly find the right part of the lecture without rewatching the entire video.
-
-## Ideas for later
-
-- Add a proper `requirements.txt` file.
-- Build a nicer query interface that returns top answers.
-- Support more video filename styles.
-- Add better error handling for missing files and API problems.
+- Add richer query results with better context.
+- Support more video filename formats.
+- Improve frontend error handling and UX.
+- Add a shared `requirements.txt` for both backend and frontend dependencies.

@@ -1,112 +1,112 @@
 :root {
-  color-scheme: normal;
-  font-family: Inter, system-ui, sans-serif;
-  background: #f5f7fb;
-  color: #111827;
+    color-scheme: normal;
+    font-family: Inter, system-ui, sans-serif;
+    background: #f5f7fb;
+    color: #111827;
 }
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  min-height: 100vh;
-  background: #f5f7fb;
+    margin: 0;
+    min-height: 100vh;
+    background: #f5f7fb;
 }
 
 .app-shell {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 32px;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 32px;
 }
 
 header {
-  margin-bottom: 24px;
+    margin-bottom: 24px;
 }
 
 header h1 {
-  margin: 0 0 8px;
-  font-size: clamp(2rem, 2.8vw, 3rem);
+    margin: 0 0 8px;
+    font-size: clamp(2rem, 2.8vw, 3rem);
 }
 
 header p {
-  margin: 0;
-  color: #475569;
+    margin: 0;
+    color: #475569;
 }
 
 .controls,
 .query-panel {
-  display: grid;
-  gap: 12px;
-  margin-bottom: 24px;
+    display: grid;
+    gap: 12px;
+    margin-bottom: 24px;
 }
 
 button {
-  border: none;
-  padding: 14px 18px;
-  font-size: 1rem;
-  border-radius: 12px;
-  background: #2563eb;
-  color: #fff;
-  cursor: pointer;
-  transition: transform 0.15s ease, background 0.15s ease;
+    border: none;
+    padding: 14px 18px;
+    font-size: 1rem;
+    border-radius: 12px;
+    background: #2563eb;
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.15s ease, background 0.15s ease;
 }
 
 button:hover {
-  transform: translateY(-1px);
-  background: #1d4ed8;
+    transform: translateY(-1px);
+    background: #1d4ed8;
 }
 
 button:disabled {
-  opacity: 0.7;
-  cursor: not-allowed;
+    opacity: 0.7;
+    cursor: not-allowed;
 }
 
 textarea {
-  width: 100%;
-  padding: 14px 16px;
-  border: 1px solid #cbd5e1;
-  border-radius: 14px;
-  resize: vertical;
-  min-height: 120px;
-  font-size: 1rem;
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #cbd5e1;
+    border-radius: 14px;
+    resize: vertical;
+    min-height: 120px;
+    font-size: 1rem;
 }
 
 .status-card,
 .results-card {
-  background: #fff;
-  border: 1px solid #e2e8f0;
-  border-radius: 18px;
-  padding: 20px;
-  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
-  margin-bottom: 24px;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 18px;
+    padding: 20px;
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
+    margin-bottom: 24px;
 }
 
 .status-card pre {
-  margin: 0;
-  white-space: pre-wrap;
-  word-break: break-word;
+    margin: 0;
+    white-space: pre-wrap;
+    word-break: break-word;
 }
 
 .result-item {
-  border-top: 1px solid #e2e8f0;
-  padding: 16px 0;
+    border-top: 1px solid #e2e8f0;
+    padding: 16px 0;
 }
 
 .result-item:first-child {
-  border-top: none;
+    border-top: none;
 }
 
 .result-item strong {
-  display: block;
-  margin-bottom: 8px;
+    display: block;
+    margin-bottom: 8px;
 }
 
 .error {
-  color: #b91c1c;
-  background: #fee2e2;
-  border: 1px solid #fecaca;
-  padding: 16px;
-  border-radius: 14px;
+    color: #b91c1c;
+    background: #fee2e2;
+    border: 1px solid #fecaca;
+    padding: 16px;
+    border-radius: 14px;
 }

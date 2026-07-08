@@ -7,7 +7,7 @@ function App() {
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState('')
 
-    const apiUrl = 'http://localhost:5000/api'
+    const apiUrl = 'http://localhost:5051/api'
 
     const fetchStatus = async () => {
         try {
