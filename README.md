@@ -1,69 +1,68 @@
-# RAG Project
+# RAG based AI Lecture Assistant
 
-This project converts tutorial videos into searchable text embeddings so a user can ask questions and retrieve relevant content from the processed data.
+This project turns recorded lecture videos into a practical study tool. It extracts speech from videos, transcribes the audio into searchable text, and uses embeddings to help answer questions from your own lecture content.
 
-## Project Overview
+## What this does
 
-The repository contains three main steps:
+The project follows a simple flow:
 
 1. `process_videos.py`
-   - Converts video files from `videos/` into MP3 audio files stored in `audios/`.
-   - Filenames are normalized using tutorial number and title extracted from the source video filename.
+   - Converts files in `videos/` into MP3 audio files saved in `audios/`.
+   - Uses the video filename to keep the tutorial number and title in the audio name.
 
 2. `create_chunks.py`
-   - Uses OpenAI Whisper (`whisper` Python package) to transcribe audio files from `audios/`.
-   - Breaks transcripts into timestamped chunks and saves the results as JSON files in `jsons/`.
-   - Each JSON file contains segment metadata and the full transcribed text.
+   - Transcribes the audio with Whisper.
+   - Splits the transcript into timestamped chunks.
+   - Saves each lecture transcript as a JSON file in `jsons/`.
 
 3. `read_chunks.py`
-   - Loads chunk JSON files from `jsons/`.
-   - Creates vector embeddings for each transcript chunk using a local Ollama embedding API endpoint and the `bge-m3` model.
-   - Builds a pandas DataFrame of chunk metadata and embeddings.
-   - Takes a user question, creates an embedding for it, and computes cosine similarity against the chunk embeddings.
+   - Loads the processed JSON files.
+   - Creates embeddings for each transcript chunk using a local Ollama API.
+   - Lets you ask a question and matches it to the most relevant lecture content.
 
-## Requirements
+## What you need
 
-- Python 3.11+ (project uses the provided `aienv/` virtual environment)
-- `ffmpeg` installed and available on `PATH`
-- `whisper` Python package
+- Python 3.11 or newer
+- `ffmpeg` available on your system `PATH`
+- The `whisper` package
 - `requests`, `tqdm`, `pandas`, `scikit-learn`, `numpy`
-- Local Ollama embedding API running at `http://localhost:11434/api/embed`
+- A running Ollama embedding API at `http://localhost:11434/api/embed`
 
-## Recommended Setup
+## Setup
 
-1. Activate the Python virtual environment:
+1. Activate the project environment:
 
 ```powershell
 & .\aienv\Scripts\Activate.ps1
 ```
 
-2. Install Python dependencies if not already installed:
+2. Install required packages:
 
 ```powershell
 python -m pip install -r requirements.txt
 ```
 
-If a `requirements.txt` file is not present, install directly:
+If you don’t have `requirements.txt`, use:
 
 ```powershell
 python -m pip install whisper requests tqdm pandas scikit-learn numpy
 ```
 
-3. Install and run Ollama locally so the embedding endpoint is available.
+3. Start Ollama locally so the embedding endpoint works.
 
-## Usage
+## How to use it
 
-### Step 1: Convert videos to audio
+### 1. Convert videos to audio
 
-Place your source video files in `videos/`, then run:
+Put your lecture videos in `videos/` and run:
 
 ```powershell
 python process_videos.py
 ```
 
-This will create MP3 files in `audios/`.
+This creates MP3 files in `audios/`.
 
-### Step 2: Transcribe audio into JSON chunks
+### 2. Convert audio into text chunks
 
 Run:
 
@@ -71,9 +70,9 @@ Run:
 python create_chunks.py
 ```
 
-This writes transcription JSON files into `jsons/`.
+This produces JSON files in `jsons/`.
 
-### Step 3: Generate embeddings and query
+### 3. Ask a question
 
 Run:
 
@@ -81,21 +80,21 @@ Run:
 python read_chunks.py
 ```
 
-Then enter your question when prompted. The script will compute similarity scores between your question and each transcript chunk.
+Then type your question and the script will compare it with the transcript chunks.
 
 ## Notes
 
-- `read_chunks.py` expects JSON files under `jsons/` and the Ollama embedding endpoint to be running.
-- Transcription is currently configured for Hindi (`language="hi"`) in `create_chunks.py`.
-- `process_videos.py` relies on specific filename formats in `videos/` to parse tutorial numbers and titles.
+- `read_chunks.py` needs JSON files in `jsons/` and the Ollama endpoint running.
+- `create_chunks.py` currently transcribes in Hindi (`language="hi"`).
+- `process_videos.py` expects a certain video filename format to extract tutorial number and title.
 
-## Project Purpose
+## Why this is useful
 
-This repository is designed to take user input in the form of a question and produce relevant output by searching across processed tutorial data. The workflow converts media into text, generates vector embeddings, and ranks content by semantic similarity.
+This repo makes it easier to learn from lecture videos by turning them into content you can search with natural questions. It helps you quickly find the right part of the lecture without rewatching the entire video.
 
-## Future Improvements
+## Ideas for later
 
-- Add a `requirements.txt` for easier dependency installation.
-- Add a query ranking or retrieval interface that returns the most relevant transcript chunks.
-- Improve filename parsing and metadata handling for broader video naming formats.
-- Add error handling for missing audio files, API failures, and empty transcripts.
+- Add a proper `requirements.txt` file.
+- Build a nicer query interface that returns top answers.
+- Support more video filename styles.
+- Add better error handling for missing files and API problems.
