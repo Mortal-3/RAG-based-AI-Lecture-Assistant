@@ -160,5 +160,11 @@ else:
 # print (np.vstack(df["embedding"].values))
 # print(np.vstack(df["embedding"]).shape)
 similarities=cosine_similarity([user_embedding], np.vstack(df["embedding"].values)).flatten()
-print("\nSimilarities with each chunk:")
-print(similarities)
+# print("\nSimilarities with each chunk:")
+# print(similarities)
+top_results=3
+max_indx=similarities.argsort()[::-1][:top_results] # Getting top 3 most similar chunks 
+print(max_indx)
+new_df=df.iloc[max_indx]
+print("\nTop 3 most similar chunks:")
+print(new_df[[ "chunk_id","title","text"]])
