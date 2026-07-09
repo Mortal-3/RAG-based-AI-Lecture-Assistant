@@ -161,6 +161,10 @@ else:
 # print (np.vstack(df["embedding"].values))
 # print(np.vstack(df["embedding"]).shape)
 similarities=cosine_similarity([user_embedding], np.vstack(df["embedding"].values)).flatten()
-print("\nSimilarities with each chunk:")
-print(similarities)
-
+# print("\nSimilarities with each chunk:")
+# print(similarities)
+top_result=3
+max_indices=similarities.argsort()[:top_result][::-1]
+df=pd.DataFrame.from_records(max_indices)
+new_df=df.iloc[max_indices]
+print(new_df[[ "chunk_id","title","text"]])
