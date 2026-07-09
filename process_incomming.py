@@ -12,7 +12,7 @@ import requests
 OLLAMA_URL = "http://localhost:11434/api/embed"
 MODEL_NAME = "bge-m3"
 JSON_FOLDER = "jsons"
-# Create embedding
+# Create embedding for the user input Query or prompt
 # -----------------------------
 def create_embedding(text):
     try:
@@ -45,6 +45,7 @@ def create_embedding(text):
 
 
 
+#Get the embeddings dataframe from the joblib file created  by read_chunks.py by joblib.dump(df, "embeddings.joblib"). Here df is the datafram pushed/dumped in the joblib file. The dataframe contains the embeddings of the chunks of text read from the json files in the jsons folder. The dataframe has columns: chunk_id, title, text, embedding. The embedding column contains the embeddings of the chunks of text.
 
 df=joblib.load("embeddings.joblib")
 
@@ -53,16 +54,16 @@ df=joblib.load("embeddings.joblib")
 incoming_query = input("\nPlease enter your question: ")
 user_embedding = create_embedding(incoming_query) # Create embedding for user question
 
-if user_embedding is not None:
-    print("\nUser Question Embedding:")
-    print("Vector Size :", len(user_embedding))
-    print("First 5     :", user_embedding[:5])
-else:
-    print("\nFailed to create embedding for user question.")
+# if user_embedding is not None:
+#     print("\nUser Question Embedding:")
+#     print("Vector Size :", len(user_embedding))
+#     print("First 5     :", user_embedding[:5])
+# else:
+#     print("\nFailed to create embedding for user question.")
 
 
 
-#Find similarities of question embedding with other embeddings in the dataframe
+# Find similarities of question embedding with other embeddings in the dataframe
 # print (np.vstack(df["embedding"].values))
 # print(np.vstack(df["embedding"]).shape)
 similarities=cosine_similarity([user_embedding], np.vstack(df["embedding"].values)).flatten()
@@ -74,11 +75,15 @@ new_df = df.iloc[max_indices].copy()
 
 new_df["similarity"] = similarities[max_indices]
 
-print(new_df[
-    [
-        "chunk_id",
-        "title",
-        "similarity",
-        "text"
-    ]
-])
+# print(new_df[
+#     [
+#         "chunk_id",
+#         "title",
+#         "similarity",
+#         "text"
+#     ]
+# ])
+#Introspecting Top Result
+for index,item in new_df.iterrows():
+    print(f"\nChunk ID: {item['chunk_id']}")
+    print(f"Title: {item['title']}")
