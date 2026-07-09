@@ -3,16 +3,91 @@
     "title": "Machine Learning Fundamentals",
     "chunks": [
         {
-            "text": "Machine learning enables computers to learn patterns from data without being explicitly programmed for every task."
+            "text": "Machine Learning (ML) is a subset of Artificial Intelligence that enables computers to learn patterns from data and make predictions or decisions without being explicitly programmed for every possible scenario."
         },
         {
-            "text": "Supervised learning uses labeled datasets to train predictive models for classification and regression problems."
+            "text": "The primary goal of Machine Learning is to develop models that improve their performance as they are exposed to more data. Instead of following fixed rules, ML systems identify relationships and patterns within datasets."
         },
         {
-            "text": "Unsupervised learning identifies hidden structures in data using clustering and dimensionality reduction techniques."
+            "text": "Machine Learning can be divided into four major categories: supervised learning, unsupervised learning, semi-supervised learning, and reinforcement learning. Each learning paradigm is suitable for different types of problems and datasets."
         },
         {
-            "text": "Reinforcement learning trains an agent to make decisions by maximizing cumulative rewards through interaction with an environment."
+            "text": "Supervised learning uses labeled datasets where both the input features and the correct output labels are known. The objective is to learn a mapping that can accurately predict outputs for unseen data."
+        },
+        {
+            "text": "Classification is a supervised learning task where the model predicts discrete categories such as spam or not spam, fraudulent or legitimate transactions, or disease diagnosis."
+        },
+        {
+            "text": "Regression is another supervised learning task where the model predicts continuous numerical values such as house prices, stock prices, temperature, or sales forecasts."
+        },
+        {
+            "text": "Popular supervised learning algorithms include Linear Regression, Logistic Regression, Decision Trees, Random Forests, Support Vector Machines (SVM), Naive Bayes, K-Nearest Neighbors (KNN), Gradient Boosting, XGBoost, LightGBM, and Neural Networks."
+        },
+        {
+            "text": "Unsupervised learning works with unlabeled data and attempts to discover hidden patterns, structures, or relationships without predefined output labels."
+        },
+        {
+            "text": "Clustering is a common unsupervised learning technique that groups similar data points together. Popular clustering algorithms include K-Means, DBSCAN, Agglomerative Clustering, and Gaussian Mixture Models."
+        },
+        {
+            "text": "Dimensionality reduction reduces the number of input features while preserving important information. Common techniques include Principal Component Analysis (PCA), t-SNE, and UMAP."
+        },
+        {
+            "text": "Semi-supervised learning combines a small amount of labeled data with a much larger amount of unlabeled data. It is useful when labeling data is expensive or time-consuming."
+        },
+        {
+            "text": "Reinforcement Learning trains an intelligent agent by allowing it to interact with an environment. The agent learns through trial and error by receiving rewards for good actions and penalties for poor actions."
+        },
+        {
+            "text": "Key concepts in Reinforcement Learning include the agent, environment, state, action, reward, policy, value function, and Q-learning. Deep Reinforcement Learning combines neural networks with reinforcement learning algorithms."
+        },
+        {
+            "text": "Feature engineering is the process of selecting, creating, and transforming input variables to improve the performance of machine learning models. Good features often have a greater impact than choosing a more complex algorithm."
+        },
+        {
+            "text": "Feature scaling techniques such as Min-Max Scaling and Standardization help algorithms converge faster and improve performance, especially for distance-based methods like KNN and SVM."
+        },
+        {
+            "text": "The machine learning workflow typically includes problem definition, data collection, data cleaning, exploratory data analysis, feature engineering, model selection, training, evaluation, hyperparameter tuning, deployment, and monitoring."
+        },
+        {
+            "text": "Training data is used to teach a machine learning model, validation data is used to tune hyperparameters, and test data is used to evaluate how well the trained model generalizes to unseen examples."
+        },
+        {
+            "text": "Overfitting occurs when a model memorizes the training data instead of learning general patterns, leading to poor performance on new data. Underfitting occurs when a model is too simple to capture important relationships."
+        },
+        {
+            "text": "Regularization techniques such as L1 (Lasso), L2 (Ridge), Elastic Net, dropout, early stopping, and data augmentation help reduce overfitting and improve model generalization."
+        },
+        {
+            "text": "Cross-validation is a model evaluation technique that repeatedly splits data into training and validation sets. K-Fold Cross Validation provides a more reliable estimate of model performance than a single train-test split."
+        },
+        {
+            "text": "Hyperparameters are settings configured before training begins, such as learning rate, batch size, number of trees, maximum tree depth, or the number of neural network layers. Hyperparameter tuning methods include Grid Search, Random Search, and Bayesian Optimization."
+        },
+        {
+            "text": "Common evaluation metrics for classification models include Accuracy, Precision, Recall, F1 Score, ROC-AUC, Confusion Matrix, and Log Loss. The choice of metric depends on the problem and class distribution."
+        },
+        {
+            "text": "Regression models are commonly evaluated using Mean Squared Error (MSE), Root Mean Squared Error (RMSE), Mean Absolute Error (MAE), Mean Absolute Percentage Error (MAPE), and R-squared (R²)."
+        },
+        {
+            "text": "Ensemble learning combines multiple machine learning models to produce better predictions than individual models. Popular ensemble techniques include Bagging, Boosting, Stacking, Random Forest, AdaBoost, XGBoost, CatBoost, and LightGBM."
+        },
+        {
+            "text": "Deep Learning is a specialized branch of Machine Learning that uses multi-layer artificial neural networks. Deep learning has achieved remarkable success in computer vision, speech recognition, natural language processing, recommendation systems, and generative AI."
+        },
+        {
+            "text": "Machine Learning is widely used in fraud detection, recommendation systems, medical diagnosis, predictive maintenance, autonomous vehicles, customer segmentation, cybersecurity, demand forecasting, financial analysis, and personalized marketing."
+        },
+        {
+            "text": "Machine Learning models can be deployed using REST APIs, cloud platforms, Docker containers, Kubernetes, serverless functions, or edge devices. Continuous monitoring is essential to detect model drift and maintain prediction quality."
+        },
+        {
+            "text": "Popular Machine Learning libraries include Scikit-learn for traditional ML algorithms, TensorFlow and PyTorch for deep learning, XGBoost and LightGBM for gradient boosting, Pandas for data manipulation, NumPy for numerical computing, and Matplotlib or Seaborn for visualization."
+        },
+        {
+            "text": "Ethical Machine Learning involves reducing bias, protecting user privacy, ensuring fairness, improving explainability, maintaining transparency, and developing models that are reliable, secure, and accountable."
         }
     ]
 }

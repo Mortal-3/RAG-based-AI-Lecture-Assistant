@@ -9,6 +9,7 @@ import pandas as pd
 from tqdm import tqdm
 from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
+import joblib
 
 # -----------------------------
 # Configuration
@@ -118,7 +119,10 @@ for filename in tqdm(json_files, desc="Processing JSON files"):
 # -----------------------------
 # Create DataFrame
 # -----------------------------
-df = pd.DataFrame(records)
+df = pd.DataFrame.from_records(records)
+
+# save thsi data frame
+joblib.dump(df, "embeddings.joblib")
 
 print("\nDataFrame Preview")
 print(df.head())
@@ -143,37 +147,3 @@ print("\nTotal Chunks:", len(df))
 # else:
 #     print("\nNo embeddings were created.")
 
-# User Question (Take a input from user and create embedding for it)
-
-incoming_query = input("\nPlease enter your question: ")
-user_embedding = create_embedding(incoming_query) # Create embedding for user question
-
-if user_embedding is not None:
-    print("\nUser Question Embedding:")
-    print("Vector Size :", len(user_embedding))
-    print("First 5     :", user_embedding[:5])
-else:
-    print("\nFailed to create embedding for user question.")
-
-
-
-#Find similarities of question embedding with other embeddings in the dataframe
-# print (np.vstack(df["embedding"].values))
-# print(np.vstack(df["embedding"]).shape)
-similarities=cosine_similarity([user_embedding], np.vstack(df["embedding"].values)).flatten()
-# print("\nSimilarities with each chunk:")
-# print(similarities)
-top_result=3
-max_indices=similarities.argsort()[::-1][:top_result]
-new_df = df.iloc[max_indices].copy()
-
-new_df["similarity"] = similarities[max_indices]
-
-print(new_df[
-    [
-        "chunk_id",
-        "title",
-        "similarity",
-        "text"
-    ]
-])

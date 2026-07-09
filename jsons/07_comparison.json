@@ -1,0 +1,120 @@
+{
+    "document_id": "comparison_002",
+    "title": "Differences Between AI, Machine Learning, RAG, Vector Databases, Cloud Computing, and Related Technologies",
+    "chunks": [
+        {
+            "text": "Artificial Intelligence (AI) vs Machine Learning (ML): Artificial Intelligence is the broader field focused on creating intelligent systems capable of reasoning, learning, and decision-making. Machine Learning is a subset of AI that enables systems to learn patterns from data without being explicitly programmed."
+        },
+        {
+            "text": "Machine Learning vs Deep Learning: Machine Learning includes a wide variety of algorithms such as Decision Trees, Random Forests, and Support Vector Machines. Deep Learning is a subset of Machine Learning that uses multi-layer neural networks and typically requires much larger datasets and greater computational power."
+        },
+        {
+            "text": "Artificial Intelligence vs Deep Learning: Artificial Intelligence is the overall discipline of building intelligent systems. Deep Learning is one of the techniques used within AI and focuses on neural networks capable of learning complex representations from data."
+        },
+        {
+            "text": "Supervised Learning vs Unsupervised Learning: Supervised Learning uses labeled data to train predictive models, while Unsupervised Learning discovers hidden patterns or clusters from unlabeled data."
+        },
+        {
+            "text": "Supervised Learning vs Reinforcement Learning: Supervised Learning learns from labeled examples, whereas Reinforcement Learning learns through interaction with an environment by maximizing cumulative rewards."
+        },
+        {
+            "text": "Classification vs Regression: Classification predicts discrete categories such as spam or not spam, while Regression predicts continuous numerical values such as house prices or sales forecasts."
+        },
+        {
+            "text": "Training Data vs Test Data: Training data is used to teach the model, while Test data is used only to evaluate how well the trained model performs on unseen data."
+        },
+        {
+            "text": "Overfitting vs Underfitting: Overfitting occurs when a model memorizes the training data and performs poorly on new data. Underfitting occurs when a model is too simple to learn the underlying patterns."
+        },
+        {
+            "text": "Embeddings vs Keywords: Keywords rely on exact word matching, whereas embeddings represent semantic meaning, allowing similar concepts to match even if different words are used."
+        },
+        {
+            "text": "Vector Database vs Relational Database: Vector databases store embeddings and perform similarity searches, whereas relational databases store structured records and retrieve data using SQL queries and exact matches."
+        },
+        {
+            "text": "Vector Search vs Keyword Search: Vector search retrieves documents based on semantic similarity, while keyword search retrieves documents containing the exact search terms."
+        },
+        {
+            "text": "Cosine Similarity vs Euclidean Distance: Cosine similarity measures the angle between vectors, making it useful for semantic search. Euclidean distance measures the straight-line distance between vectors."
+        },
+        {
+            "text": "Exact Nearest Neighbor (ENN) vs Approximate Nearest Neighbor (ANN): ENN guarantees the closest vector but is slower on large datasets. ANN provides much faster searches with minimal loss in accuracy."
+        },
+        {
+            "text": "HNSW vs IVF: HNSW builds a graph structure for fast and accurate similarity search, while IVF partitions vectors into clusters to reduce search space and improve query speed."
+        },
+        {
+            "text": "FAISS vs ChromaDB: FAISS is a lightweight vector similarity library optimized for fast local search, while ChromaDB is a complete vector database that stores embeddings, metadata, and documents with built-in persistence."
+        },
+        {
+            "text": "ChromaDB vs Pinecone: ChromaDB is an open-source vector database typically deployed locally, whereas Pinecone is a fully managed cloud-native vector database with automatic scaling and maintenance."
+        },
+        {
+            "text": "Qdrant vs Milvus: Qdrant emphasizes ease of deployment and metadata filtering, while Milvus is designed for large-scale enterprise workloads capable of handling billions of vectors."
+        },
+        {
+            "text": "RAG vs Fine-Tuning: RAG retrieves external documents during inference, allowing knowledge to be updated without retraining. Fine-tuning modifies the model's parameters and is best for changing behavior, style, or specialized reasoning."
+        },
+        {
+            "text": "RAG vs Traditional Chatbots: Traditional chatbots rely on predefined rules or fixed training data, whereas RAG dynamically retrieves relevant documents before generating responses."
+        },
+        {
+            "text": "LLM vs RAG: A Large Language Model generates responses using its pretrained knowledge. A RAG system combines an LLM with external document retrieval to provide more accurate and up-to-date answers."
+        },
+        {
+            "text": "Prompt Engineering vs RAG: Prompt engineering improves model responses by crafting better prompts, whereas RAG improves responses by supplying relevant external information retrieved from a knowledge base."
+        },
+        {
+            "text": "Chunking vs Embedding: Chunking divides documents into smaller sections, while embedding converts each chunk into a numerical vector for semantic search."
+        },
+        {
+            "text": "Embedding Model vs Language Model: An embedding model generates vector representations for similarity search, whereas a language model generates natural language responses."
+        },
+        {
+            "text": "Public Cloud vs Private Cloud: Public cloud resources are shared among multiple customers and managed by cloud providers. Private cloud infrastructure is dedicated to a single organization and offers greater control."
+        },
+        {
+            "text": "Public Cloud vs Hybrid Cloud: Public cloud relies entirely on cloud-provider infrastructure, whereas Hybrid cloud combines on-premises resources with public cloud services."
+        },
+        {
+            "text": "Hybrid Cloud vs Multi-Cloud: Hybrid cloud integrates on-premises infrastructure with one or more public clouds. Multi-cloud uses services from multiple cloud providers regardless of whether on-premises infrastructure is involved."
+        },
+        {
+            "text": "Cloud Computing vs On-Premises Infrastructure: Cloud computing provides scalable resources over the internet with pay-as-you-go pricing, while on-premises infrastructure requires organizations to purchase, maintain, and manage their own hardware."
+        },
+        {
+            "text": "IaaS vs PaaS vs SaaS: IaaS provides virtual infrastructure, PaaS provides managed application development platforms, and SaaS delivers fully managed software applications to end users."
+        },
+        {
+            "text": "Virtual Machines vs Containers: Virtual Machines include a complete guest operating system and require more resources. Containers share the host operating system kernel, making them lighter and faster."
+        },
+        {
+            "text": "Docker vs Kubernetes: Docker is used to build and run containers, whereas Kubernetes orchestrates and manages large numbers of containers across clusters."
+        },
+        {
+            "text": "Serverless Computing vs Virtual Machines: Serverless computing automatically manages infrastructure and charges only for execution time, while Virtual Machines require users to provision and manage compute resources."
+        },
+        {
+            "text": "Object Storage vs Block Storage: Object storage stores files as objects with metadata and is ideal for backups and media files. Block storage divides data into fixed-size blocks and is optimized for databases and virtual machines."
+        },
+        {
+            "text": "SQL Database vs NoSQL Database: SQL databases store structured relational data with predefined schemas, whereas NoSQL databases support flexible schemas and are designed for large-scale distributed applications."
+        },
+        {
+            "text": "Traditional Search Engine vs Semantic Search Engine: Traditional search engines prioritize keyword matching, whereas semantic search engines understand the meaning and context of user queries using embeddings."
+        },
+        {
+            "text": "AI Assistant vs RAG Assistant: An AI assistant relies mainly on pretrained knowledge, while a RAG assistant supplements its responses with information retrieved from external documents."
+        },
+        {
+            "text": "Batch Processing vs Real-Time Processing: Batch processing analyzes data in scheduled groups, whereas real-time processing handles data immediately as it arrives."
+        },
+        {
+            "text": "Generative AI vs Predictive AI: Generative AI creates new content such as text, images, or code, while Predictive AI analyzes historical data to forecast future outcomes or classify new observations."
+        },
+        {
+            "text": "Open-Source AI Models vs Proprietary AI Models: Open-source models allow customization, local deployment, and transparency, whereas proprietary models are managed by vendors and often provide high performance through cloud APIs."
+        }
+    ]
+}

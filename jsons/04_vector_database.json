@@ -3,22 +3,112 @@
     "title": "Vector Databases and Embeddings",
     "chunks": [
         {
-            "text": "An embedding is a numerical representation of text, images, or other data in the form of a vector."
+            "text": "An embedding is a numerical representation of text, images, audio, video, or other data in the form of a high-dimensional vector. Embeddings capture the semantic meaning of data so that similar items are represented by nearby vectors."
         },
         {
-            "text": "Vector databases store embeddings and allow fast similarity searches using methods such as cosine similarity."
+            "text": "Embedding models transform unstructured data into dense numerical vectors. These vectors enable machines to compare the meaning of documents instead of relying solely on exact keyword matches."
         },
         {
-            "text": "Embeddings capture the semantic meaning of text, enabling similarity searches based on meaning rather than exact keyword matches."
+            "text": "Embeddings are widely used in semantic search, recommendation systems, Retrieval-Augmented Generation (RAG), document clustering, duplicate detection, image search, and question-answering systems."
         },
         {
-            "text": "Popular vector database systems are used in recommendation engines, semantic search, and Retrieval-Augmented Generation (RAG) applications."
+            "text": "Traditional keyword search relies on exact word matching, whereas semantic search compares embeddings to identify documents with similar meaning even when different words are used."
         },
         {
-            "text": "Common similarity metrics used in vector databases include cosine similarity, Euclidean distance, and dot product."
+            "text": "High-dimensional vectors may contain hundreds or thousands of numerical values. For example, embedding models commonly generate vectors with dimensions such as 384, 768, 1024, or 1536."
         },
         {
-            "text": "Before storing data in a vector database, documents are typically split into smaller chunks and converted into embedding vectors using an embedding model."
+            "text": "Popular embedding models include BGE-M3, BGE Large, Sentence Transformers, E5, OpenAI text-embedding models, Nomic Embed, Jina Embeddings, Cohere Embed, and multilingual embedding models."
+        },
+        {
+            "text": "The same embedding model should generally be used for both document embeddings and query embeddings. Using different embedding models may produce vectors that are not directly comparable."
+        },
+        {
+            "text": "A vector database is a specialized database designed to store embeddings and perform efficient similarity searches over millions or even billions of vectors."
+        },
+        {
+            "text": "Unlike relational databases that search using SQL conditions, vector databases retrieve information by measuring the similarity between vectors representing the user's query and stored documents."
+        },
+        {
+            "text": "Popular vector databases include FAISS, ChromaDB, Pinecone, Qdrant, Milvus, Weaviate, LanceDB, Elasticsearch Vector Search, Redis Vector Search, and Vespa."
+        },
+        {
+            "text": "FAISS is an open-source vector search library developed by Meta. It is commonly used for local vector search and research projects where a lightweight solution is sufficient."
+        },
+        {
+            "text": "ChromaDB is an open-source vector database designed specifically for AI applications. It provides an easy-to-use interface for storing embeddings, metadata, and documents."
+        },
+        {
+            "text": "Pinecone is a fully managed cloud vector database that automatically handles indexing, scaling, replication, and high-performance similarity search."
+        },
+        {
+            "text": "Qdrant is an open-source vector database that supports metadata filtering, distributed deployment, payload storage, and efficient Approximate Nearest Neighbor (ANN) search."
+        },
+        {
+            "text": "Milvus is a scalable open-source vector database optimized for handling billions of vectors and supporting enterprise-scale AI applications."
+        },
+        {
+            "text": "Each vector stored in a vector database is typically associated with metadata such as document ID, title, author, page number, category, source file, language, and creation date."
+        },
+        {
+            "text": "Metadata filtering allows searches to be restricted to a subset of documents. For example, searches can be limited to a specific department, product, language, publication year, or document type."
+        },
+        {
+            "text": "Similarity search identifies vectors that are closest to the query vector. Instead of returning exact matches, it retrieves documents that are semantically similar to the user's question."
+        },
+        {
+            "text": "Cosine similarity measures the angle between two vectors. A higher cosine similarity score indicates that the vectors point in similar directions and therefore represent semantically similar information."
+        },
+        {
+            "text": "Euclidean distance measures the straight-line distance between vectors. Smaller distances indicate greater similarity."
+        },
+        {
+            "text": "Dot product similarity measures the mathematical product of two vectors. It is frequently used when embeddings are normalized or when embedding models are trained using dot-product objectives."
+        },
+        {
+            "text": "Most modern vector databases use Approximate Nearest Neighbor (ANN) search rather than Exact Nearest Neighbor search because ANN significantly improves search speed while maintaining high accuracy."
+        },
+        {
+            "text": "Popular ANN indexing algorithms include HNSW (Hierarchical Navigable Small World), IVF (Inverted File Index), Product Quantization (PQ), ScaNN, and DiskANN."
+        },
+        {
+            "text": "HNSW builds a graph-based index that enables extremely fast similarity searches while maintaining excellent recall. It is one of the most commonly used ANN algorithms."
+        },
+        {
+            "text": "IVF partitions vectors into clusters before searching. During retrieval, only the most relevant clusters are searched, reducing query latency."
+        },
+        {
+            "text": "Product Quantization compresses vectors to reduce memory usage while still allowing efficient approximate similarity searches over very large datasets."
+        },
+        {
+            "text": "Before embeddings are generated, documents are typically preprocessed by removing unnecessary formatting, cleaning text, splitting into chunks, and attaching useful metadata."
+        },
+        {
+            "text": "Chunking divides large documents into smaller pieces before embedding generation. Proper chunk size improves retrieval quality because each embedding represents a focused topic."
+        },
+        {
+            "text": "Chunk overlap helps preserve context between neighboring chunks. Many RAG systems use overlapping chunks to avoid losing important information near chunk boundaries."
+        },
+        {
+            "text": "When a user submits a query, the same embedding model converts the question into a vector. The vector database then retrieves the top-k most similar document embeddings."
+        },
+        {
+            "text": "The retrieved documents are often reranked using cross-encoder models before being passed to a Large Language Model. Reranking improves the relevance of the final context."
+        },
+        {
+            "text": "Hybrid search combines semantic vector search with keyword-based search algorithms such as BM25. This approach improves retrieval when users search for exact product names, error codes, or technical terminology."
+        },
+        {
+            "text": "Vector databases are commonly used in enterprise search, recommendation engines, chatbots, customer support, legal research, medical knowledge systems, fraud detection, e-commerce search, and Retrieval-Augmented Generation (RAG)."
+        },
+        {
+            "text": "Performance in vector databases depends on embedding quality, chunk size, indexing algorithm, metadata filtering, hardware resources, and the number of stored vectors."
+        },
+        {
+            "text": "Common challenges include duplicate embeddings, poor chunking strategies, inconsistent metadata, outdated knowledge bases, embedding drift after model upgrades, and balancing retrieval accuracy with search speed."
+        },
+        {
+            "text": "Best practices for vector search include using high-quality embedding models, maintaining clean metadata, selecting an appropriate chunk size, using overlap when necessary, evaluating retrieval quality regularly, and rebuilding indexes after significant data updates."
         }
     ]
 }

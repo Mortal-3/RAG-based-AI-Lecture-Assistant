@@ -3,13 +3,64 @@
     "title": "Artificial Intelligence Basics",
     "chunks": [
         {
-            "text": "Artificial Intelligence (AI) is a branch of computer science that focuses on creating systems capable of performing tasks that normally require human intelligence."
+            "text": "Artificial Intelligence (AI) is a branch of computer science that focuses on building systems capable of performing tasks that normally require human intelligence. These tasks include reasoning, learning, problem-solving, decision-making, understanding language, and recognizing images."
         },
         {
-            "text": "AI techniques include machine learning, deep learning, natural language processing, computer vision, and robotics."
+            "text": "AI can be categorized into Narrow AI, General AI, and Super AI. Narrow AI is designed for a specific task such as voice assistants or recommendation systems. Artificial General Intelligence (AGI) refers to machines with human-level intelligence across many domains and remains a research goal. Super AI is a hypothetical form of intelligence that would surpass human intelligence."
         },
         {
-            "text": "Applications of AI include virtual assistants, recommendation systems, fraud detection, autonomous vehicles, and healthcare diagnostics."
+            "text": "Machine Learning is a subset of Artificial Intelligence in which computers learn patterns from data instead of being explicitly programmed. Machine learning algorithms improve their performance as they are exposed to more data."
+        },
+        {
+            "text": "Deep Learning is a subset of Machine Learning that uses artificial neural networks with multiple hidden layers. Deep learning has achieved state-of-the-art performance in computer vision, speech recognition, natural language processing, and generative AI."
+        },
+        {
+            "text": "Natural Language Processing (NLP) enables computers to understand, interpret, generate, and respond to human language. Applications include chatbots, machine translation, text summarization, sentiment analysis, and question-answering systems."
+        },
+        {
+            "text": "Computer Vision is a field of AI that enables computers to interpret and analyze images and videos. It is widely used in facial recognition, medical imaging, autonomous driving, quality inspection, and object detection."
+        },
+        {
+            "text": "Robotics combines Artificial Intelligence with mechanical engineering and electronics to create intelligent machines capable of interacting with the physical world. AI-powered robots are used in manufacturing, healthcare, logistics, agriculture, and space exploration."
+        },
+        {
+            "text": "Artificial Intelligence systems can be trained using supervised learning, unsupervised learning, semi-supervised learning, and reinforcement learning. Each learning method is suitable for different types of problems and available data."
+        },
+        {
+            "text": "Supervised learning uses labeled datasets where the correct output is known. Common algorithms include Linear Regression, Logistic Regression, Decision Trees, Random Forests, Support Vector Machines, and Neural Networks."
+        },
+        {
+            "text": "Unsupervised learning discovers hidden patterns in unlabeled data. Popular techniques include clustering algorithms such as K-Means and DBSCAN, as well as dimensionality reduction methods like Principal Component Analysis (PCA)."
+        },
+        {
+            "text": "Reinforcement Learning trains an agent by rewarding desirable actions and penalizing undesirable ones. It is commonly used in robotics, autonomous vehicles, recommendation systems, and game-playing AI such as AlphaGo."
+        },
+        {
+            "text": "Generative AI refers to AI models capable of creating new content such as text, images, videos, music, and computer code. Popular examples include ChatGPT, Claude, Gemini, Llama, Stable Diffusion, and DALL-E."
+        },
+        {
+            "text": "Large Language Models (LLMs) are deep learning models trained on massive amounts of text data. They can answer questions, summarize documents, generate code, translate languages, and assist with writing. Transformer architecture is the foundation of modern LLMs."
+        },
+        {
+            "text": "Embeddings are numerical vector representations of text, images, or other data. Similar pieces of information produce similar vectors, making embeddings useful for semantic search, recommendation systems, clustering, and Retrieval-Augmented Generation (RAG)."
+        },
+        {
+            "text": "Vector databases store high-dimensional embeddings and enable fast similarity searches using metrics such as cosine similarity, Euclidean distance, or dot product. Popular vector databases include FAISS, ChromaDB, Milvus, Pinecone, Weaviate, and Qdrant."
+        },
+        {
+            "text": "Retrieval-Augmented Generation (RAG) combines vector search with Large Language Models. User queries are converted into embeddings, relevant documents are retrieved from a vector database, and the retrieved context is supplied to the language model to generate accurate answers."
+        },
+        {
+            "text": "Artificial Intelligence is widely used across industries including healthcare, finance, education, cybersecurity, retail, manufacturing, transportation, agriculture, entertainment, and scientific research. AI improves automation, decision-making, and operational efficiency."
+        },
+        {
+            "text": "Developing AI systems involves several stages including data collection, data cleaning, feature engineering, model training, evaluation, deployment, monitoring, and continuous improvement. The quality of the training data significantly affects model performance."
+        },
+        {
+            "text": "Common evaluation metrics for AI and machine learning models include Accuracy, Precision, Recall, F1 Score, ROC-AUC, Mean Squared Error (MSE), Mean Absolute Error (MAE), and Root Mean Squared Error (RMSE). Different metrics are appropriate for different tasks."
+        },
+        {
+            "text": "Artificial Intelligence also presents challenges including bias in training data, privacy concerns, explainability, model hallucinations, security risks, computational costs, and ethical considerations. Responsible AI practices aim to build systems that are fair, transparent, secure, and trustworthy."
         }
     ]
 }
