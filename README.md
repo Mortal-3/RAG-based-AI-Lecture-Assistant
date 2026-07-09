@@ -1,31 +1,37 @@
 # RAG based AI Lecture Assistant
 
-This project turns recorded lecture videos into a practical study tool. It extracts speech from videos, transcribes the audio into searchable text, and uses embeddings to help answer questions from your own lecture content.
+This project turns recorded lecture videos into a practical study tool. It extracts speech from videos, transcribes the audio into searchable text, creates embeddings for transcript chunks, and lets you query your own lecture content.
 
 ## What this does
 
-The project follows a simple flow:
+The project follows this workflow:
 
 1. `process_videos.py`
-   - Converts files in `videos/` into MP3 audio files saved in `audios/`.
-   - Uses the video filename to keep the tutorial number and title in the audio name.
+   - Converts files in `videos/` into MP3 audio files in `audios/`.
+   - Uses the video filename to preserve the tutorial number and title in the audio name.
 
 2. `create_chunks.py`
-   - Transcribes the audio with Whisper.
+   - Transcribes each MP3 audio file using Whisper.
    - Splits the transcript into timestamped chunks.
    - Saves each lecture transcript as a JSON file in `jsons/`.
 
 3. `read_chunks.py`
-   - Loads the processed JSON files.
+   - Loads JSON transcript files from `jsons/`.
    - Creates embeddings for each transcript chunk using a local Ollama API.
-   - Lets you ask a question and matches it to the most relevant lecture content.
+   - Saves the embedding dataset to `embeddings.joblib`.
+
+4. `process_incomming.py`
+   - Loads `embeddings.joblib`.
+   - Prompts for a user question.
+   - Computes similarity between the question embedding and transcript chunks.
+   - Prints the top matching chunks.
 
 ## What you need
 
 - Python 3.11 or newer
 - `ffmpeg` available on your system `PATH`
-- The `whisper` package
-- `requests`, `tqdm`, `pandas`, `scikit-learn`, `numpy`
+- `whisper` package
+- `requests`, `tqdm`, `pandas`, `scikit-learn`, `numpy`, `joblib`
 - A running Ollama embedding API at `http://localhost:11434/api/embed`
 
 ## Setup
@@ -45,52 +51,39 @@ python -m pip install -r requirements.txt
 If you don’t have `requirements.txt`, use:
 
 ```powershell
-python -m pip install whisper requests tqdm pandas scikit-learn numpy
+python -m pip install whisper requests tqdm pandas scikit-learn numpy joblib
 ```
 
 3. Start Ollama locally so the embedding endpoint works.
 
-## How to use it
+## File run order
 
-### 1. Convert videos to audio
+Follow these steps in order:
 
-Put your lecture videos in `videos/` and run:
+1. `python process_videos.py`
+   - Converts `videos/` files into `audios/` MP3s.
 
-```powershell
-python process_videos.py
-```
+2. `python create_chunks.py`
+   - Transcribes audio files and saves JSON transcripts in `jsons/`.
 
-This creates MP3 files in `audios/`.
+3. `python read_chunks.py`
+   - Builds embeddings from the JSON transcript chunks and saves `embeddings.joblib`.
 
-### 2. Convert audio into text chunks
-
-Run:
-
-```powershell
-python create_chunks.py
-```
-
-This produces JSON files in `jsons/`.
-
-### 3. Ask a question
-
-Run:
-
-```powershell
-python read_chunks.py
-```
-
-Then type your question and the script will compare it with the transcript chunks.
+4. `python process_incomming.py`
+   - Loads the embeddings file and asks for a query.
+   - Returns the most similar transcript chunks for the question.
 
 ## Notes
 
-- `read_chunks.py` needs JSON files in `jsons/` and the Ollama endpoint running.
+- Do not run `read_chunks.py` before `create_chunks.py` unless you already have JSON files in `jsons/`.
+- Do not run `process_incomming.py` before `read_chunks.py`, because it needs `embeddings.joblib`.
 - `create_chunks.py` currently transcribes in Hindi (`language="hi"`).
-- `process_videos.py` expects a certain video filename format to extract tutorial number and title.
+- `process_videos.py` expects video filenames with a `#` tutorial number and ` | ` separator.
+- `read_chunks.py` does not ask questions; it only creates embeddings.
 
 ## Why this is useful
 
-This repo makes it easier to learn from lecture videos by turning them into content you can search with natural questions. It helps you quickly find the right part of the lecture without rewatching the entire video.
+This repo helps you learn from lecture videos by converting them into searchable text and embeddings. You can quickly find the right part of a lecture using natural language queries instead of rewatching the entire video.
 
 ## Ideas for later
 
