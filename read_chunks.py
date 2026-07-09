@@ -146,7 +146,7 @@ print("\nTotal Chunks:", len(df))
 # User Question (Take a input from user and create embedding for it)
 
 incoming_query = input("\nPlease enter your question: ")
-user_embedding = create_embedding([incoming_query]) # Create embedding for user question
+user_embedding = create_embedding(incoming_query) # Create embedding for user question
 
 if user_embedding is not None:
     print("\nUser Question Embedding:")
@@ -164,7 +164,16 @@ similarities=cosine_similarity([user_embedding], np.vstack(df["embedding"].value
 # print("\nSimilarities with each chunk:")
 # print(similarities)
 top_result=3
-max_indices=similarities.argsort()[:top_result][::-1]
-df=pd.DataFrame.from_records(max_indices)
-new_df=df.iloc[max_indices]
-print(new_df[[ "chunk_id","title","text"]])
+max_indices=similarities.argsort()[::-1][:top_result]
+new_df = df.iloc[max_indices].copy()
+
+new_df["similarity"] = similarities[max_indices]
+
+print(new_df[
+    [
+        "chunk_id",
+        "title",
+        "similarity",
+        "text"
+    ]
+])
