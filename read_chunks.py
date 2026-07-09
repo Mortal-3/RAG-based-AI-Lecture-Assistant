@@ -128,22 +128,23 @@ print(df.info())
 
 print("\nTotal Chunks:", len(df))
 
-if len(df) > 0:
-    first = df.iloc[0]
+# if len(df) > 0:
+#     first = df.iloc[0]
 
-    print("\nFirst Record")
-    print("-" * 40)
-    print("Chunk ID    :", first["chunk_id"])
-    print("Document ID :", first["document_id"])
-    print("Title       :", first["title"])
-    print("File Name   :", first["file_name"])
-    print("Text        :", first["text"])
-    print("Vector Size :", len(first["embedding"]))
-    print("First 5     :", first["embedding"][:5])
-else:
-    print("\nNo embeddings were created.")
+#     print("\nFirst Record")
+#     print("-" * 40)
+#     print("Chunk ID    :", first["chunk_id"])
+#     print("Document ID :", first["document_id"])
+#     print("Title       :", first["title"])
+#     print("File Name   :", first["file_name"])
+#     print("Text        :", first["text"])
+#     print("Vector Size :", len(first["embedding"]))
+#     print("First 5     :", first["embedding"][:5])
+# else:
+#     print("\nNo embeddings were created.")
 
 # User Question (Take a input from user and create embedding for it)
+
 incoming_query = input("\nPlease enter your question: ")
 user_embedding = create_embedding([incoming_query]) # Create embedding for user question
 
@@ -162,3 +163,4 @@ else:
 similarities=cosine_similarity([user_embedding], np.vstack(df["embedding"].values)).flatten()
 print("\nSimilarities with each chunk:")
 print(similarities)
+
