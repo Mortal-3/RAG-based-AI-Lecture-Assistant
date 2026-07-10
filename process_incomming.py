@@ -83,6 +83,20 @@ new_df["similarity"] = similarities[max_indices]
 #         "text"
 #     ]
 # ])
+
+# Create a prompt for the llm
+prompt=f'''Here are vidos chunks containing video number,video title ,start time secons,end time in seconds,the text at that  time:
+{new_df[['chunk_id', 'title', 'similarity', 'text']].to_string(index=False)}
+-------------------------------------------
+
+"{incoming_query}"
+User asked this question related  to the video chunks ,you have to answer the question based on the video chunks provided below and guide the user to the relevant chunk of the video.if user ask unreated questiion tehn tell him that  you can only answer the question related to the video chunks provided below and you cannot answer any other question.Tell him  thath you can only answer question related to the course video
+'''
+
+#Demo purpose for promt testing
+with open ("prompt.txt", "w", encoding="utf-8") as f:
+    f.write(prompt)
+
 #Introspecting Top Result
 for index,item in new_df.iterrows():
     print(f"\nChunk ID: {item['chunk_id']}")
