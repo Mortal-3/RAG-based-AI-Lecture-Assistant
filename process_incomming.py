@@ -125,7 +125,6 @@ User asked this question related  to the video chunks ,you have to answer the qu
 #     print(f"Title: {item['title']}")
 
 
-
 response=(inference(prompt))
 print(response)
 with open("response.txt", "w", encoding="utf-8") as f:
