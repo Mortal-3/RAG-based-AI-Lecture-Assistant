@@ -10,6 +10,7 @@ import requests
 # Configuration
 # -----------------------------
 OLLAMA_URL = "http://localhost:11434/api/embed"
+URL = "http://localhost:11434/api/generate"
 MODEL_NAME = "bge-m3"
 JSON_FOLDER = "jsons"
 # Create embedding for the user input Query or prompt
@@ -41,6 +42,27 @@ def create_embedding(text):
         return None
 
 
+
+def inference(prompt):
+    try:
+        response = requests.post(
+            URL,
+            json={
+                "model": "deepseek-r1:8b",
+                "prompt": prompt,
+                "stream": False
+            },
+            timeout=500
+        )
+
+        response.raise_for_status()
+        data = response.json()
+
+        return data["response"]
+
+    except requests.exceptions.RequestException as e:
+        print(e)
+        return None
 
 
 
@@ -94,10 +116,17 @@ User asked this question related  to the video chunks ,you have to answer the qu
 '''
 
 #Demo purpose for promt testing
-with open ("prompt.txt", "w", encoding="utf-8") as f:
-    f.write(prompt)
+# with open ("prompt.txt", "w", encoding="utf-8") as f:
+#     f.write(prompt)
 
 #Introspecting Top Result
-for index,item in new_df.iterrows():
-    print(f"\nChunk ID: {item['chunk_id']}")
-    print(f"Title: {item['title']}")
+# for index,item in new_df.iterrows():
+#     print(f"\nChunk ID: {item['chunk_id']}")
+#     print(f"Title: {item['title']}")
+
+
+
+response=(inference(prompt))
+print(response)
+with open("response.txt", "w", encoding="utf-8") as f:
+    f.write(response)
