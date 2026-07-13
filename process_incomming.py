@@ -129,3 +129,4 @@ response=(inference(prompt))
 print(response)
 with open("response.txt", "w", encoding="utf-8") as f:
     f.write(response)
+
