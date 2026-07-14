@@ -69,6 +69,29 @@ def inference(prompt: str, model: str = CHAT_MODEL):
         print(f"LLM Error: {e}")
         return None
 
+def inference_openai(prompt: str, model: str = "gpt-4"):
+    """Generate response from OpenAI's GPT model."""
+
+    try:
+        import openai
+
+        response = openai.ChatCompletion.create(
+            model=model,
+            messages=[
+                {"role": "system", "content": "You are a helpful course assistant."},
+                {"role": "user", "content": prompt}
+            ],
+            max_tokens=500,
+            n=1,
+            stop=None,
+            temperature=0.7
+        )
+
+        return response.choices[0].message['content'].strip()
+
+    except Exception as e:
+        print(f"OpenAI LLM Error: {e}")
+        return None
 
 # ==========================================================
 # Retrieval
@@ -157,13 +180,10 @@ def main():
 
     answer = inference(prompt)
 
-    if answer:
-        print("\n" + "=" * 60)
-        print(answer)
-        print("=" * 60)
+    response=inference_openai(prompt)
 
-        with open("response.txt", "w", encoding="utf-8") as file:
-            file.write(answer)
+    with open("response.txt", "w", encoding="utf-8") as file:
+        file.write(answer)
 
 
 # ==========================================================
