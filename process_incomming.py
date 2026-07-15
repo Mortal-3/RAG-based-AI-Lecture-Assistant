@@ -1,97 +1,67 @@
 import joblib
 import numpy as np
-import requests
+from openai import OpenAI
 from sklearn.metrics.pairwise import cosine_similarity
+
+from config import api_key
 
 # ==========================================================
 # Configuration
 # ==========================================================
 
-OLLAMA_HOST = "http://localhost:11434"
+client = OpenAI(api_key=api_key)
 
-EMBED_MODEL = "bge-m3"
-CHAT_MODEL = "deepseek-r1:8b"
-
-EMBED_URL = f"{OLLAMA_HOST}/api/embed"
-GENERATE_URL = f"{OLLAMA_HOST}/api/generate"
+EMBED_MODEL = "text-embedding-3-small"
+CHAT_MODEL = "gpt-5"
 
 EMBEDDINGS_FILE = "embeddings.joblib"
 TOP_K = 3
 
 
 # ==========================================================
-# Ollama API
+# OpenAI API
 # ==========================================================
 
 def create_embedding(text: str, model: str = EMBED_MODEL):
-    """Generate embedding for the given text."""
+    """Generate an embedding using OpenAI."""
 
     try:
-        response = requests.post(
-            EMBED_URL,
-            json={
-                "model": model,
-                "input": text
-            },
-            timeout=300
+        response = client.embeddings.create(
+            model=model,
+            input=text,
         )
 
-        response.raise_for_status()
-        data = response.json()
+        return response.data[0].embedding
 
-        return data["embeddings"][0]
-
-    except (requests.exceptions.RequestException, KeyError) as e:
+    except Exception as e:
         print(f"Embedding Error: {e}")
         return None
 
 
 def inference(prompt: str, model: str = CHAT_MODEL):
-    """Generate response from the chat model."""
+    """Generate a response using OpenAI."""
 
     try:
-        response = requests.post(
-            GENERATE_URL,
-            json={
-                "model": model,
-                "prompt": prompt,
-                "stream": False
-            },
-            timeout=600
-        )
-
-        response.raise_for_status()
-        data = response.json()
-
-        return data["response"]
-
-    except (requests.exceptions.RequestException, KeyError) as e:
-        print(f"LLM Error: {e}")
-        return None
-
-def inference_openai(prompt: str, model: str = "gpt-4"):
-    """Generate response from OpenAI's GPT model."""
-
-    try:
-        import openai
-
-        response = openai.ChatCompletion.create(
+        response = client.responses.create(
             model=model,
-            messages=[
-                {"role": "system", "content": "You are a helpful course assistant."},
-                {"role": "user", "content": prompt}
+            input=[
+                {
+                    "role": "system",
+                    "content": "You are a helpful course assistant.",
+                },
+                {
+                    "role": "user",
+                    "content": prompt,
+                },
             ],
-            max_tokens=500,
-            n=1,
-            stop=None,
-            temperature=0.7
         )
 
-        return response.choices[0].message['content'].strip()
+        return response.output_text
 
     except Exception as e:
-        print(f"OpenAI LLM Error: {e}")
+        print(f"OpenAI Error: {e}")
         return None
+
 
 # ==========================================================
 # Retrieval
@@ -99,7 +69,6 @@ def inference_openai(prompt: str, model: str = "gpt-4"):
 
 def load_embeddings():
     """Load precomputed embeddings."""
-
     return joblib.load(EMBEDDINGS_FILE)
 
 
@@ -108,7 +77,7 @@ def retrieve_chunks(query_embedding, embeddings_df, top_k=TOP_K):
 
     similarities = cosine_similarity(
         [query_embedding],
-        np.vstack(embeddings_df["embedding"].values)
+        np.vstack(embeddings_df["embedding"].values),
     ).flatten()
 
     top_indices = similarities.argsort()[::-1][:top_k]
@@ -136,7 +105,7 @@ You are a helpful course assistant.
 Answer ONLY using the provided video chunks.
 
 Instructions:
-- Answer only from the context.
+- Answer only from the provided context.
 - Do not make up information.
 - If the answer is not available, say:
   "I couldn't find that information in the provided course videos."
@@ -157,8 +126,8 @@ User Question:
 # ==========================================================
 
 def main():
-
     print("Loading embeddings...")
+
     embeddings_df = load_embeddings()
 
     query = input("\nAsk a question: ").strip()
@@ -170,25 +139,24 @@ def main():
 
     retrieved_chunks = retrieve_chunks(
         query_embedding,
-        embeddings_df
+        embeddings_df,
     )
 
     prompt = build_prompt(
         retrieved_chunks,
-        query
+        query,
     )
 
     answer = inference(prompt)
 
-    response=inference_openai(prompt)
+    print("\nAnswer:\n")
+    print(answer)
 
     with open("response.txt", "w", encoding="utf-8") as file:
-        file.write(answer)
+        file.write(answer or "")
 
+    print("\nResponse saved to response.txt")
 
-# ==========================================================
-# Entry Point
-# ==========================================================
 
 if __name__ == "__main__":
     main()
