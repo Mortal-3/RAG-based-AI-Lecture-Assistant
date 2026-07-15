@@ -3,4 +3,4 @@
 # 2. Click on "Create new secret key"   
 
 # Put openAI api key here
-api_key=" "
+api_key="Paste your openAI api key here"
