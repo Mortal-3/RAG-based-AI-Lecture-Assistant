@@ -3,91 +3,158 @@
     "title": "Machine Learning Fundamentals",
     "chunks": [
         {
-            "text": "Machine Learning (ML) is a subset of Artificial Intelligence that enables computers to learn patterns from data and make predictions or decisions without being explicitly programmed for every possible scenario."
+            "number": 11,
+            "title": "Semi-Supervised Learning",
+            "start": 600,
+            "end": 660,
+            "text": "Semi-supervised learning combines a small amount of labeled data with a large amount of unlabeled data. This approach is useful when obtaining labeled datasets is expensive or time-consuming. It helps models improve performance by learning from both known and unknown examples."
         },
         {
-            "text": "The primary goal of Machine Learning is to develop models that improve their performance as they are exposed to more data. Instead of following fixed rules, ML systems identify relationships and patterns within datasets."
+            "number": 12,
+            "title": "Reinforcement Learning",
+            "start": 660,
+            "end": 720,
+            "text": "Reinforcement learning is a learning method where an agent interacts with an environment and learns through rewards and penalties. The objective is to discover actions that maximize long-term rewards. Applications include robotics, gaming, recommendation systems, and autonomous vehicles."
         },
         {
-            "text": "Machine Learning can be divided into four major categories: supervised learning, unsupervised learning, semi-supervised learning, and reinforcement learning. Each learning paradigm is suitable for different types of problems and datasets."
+            "number": 13,
+            "title": "Machine Learning Workflow",
+            "start": 720,
+            "end": 780,
+            "text": "A typical machine learning workflow includes collecting data, cleaning and preprocessing information, selecting features, training models, evaluating performance, and deploying the final system. Each stage plays an important role in building reliable machine learning solutions."
         },
         {
-            "text": "Supervised learning uses labeled datasets where both the input features and the correct output labels are known. The objective is to learn a mapping that can accurately predict outputs for unseen data."
+            "number": 14,
+            "title": "Data Collection and Preparation",
+            "start": 780,
+            "end": 840,
+            "text": "High-quality data is essential for successful machine learning models. Data preparation involves gathering relevant information, removing errors, handling missing values, eliminating duplicates, and transforming raw data into a suitable format for analysis."
         },
         {
-            "text": "Classification is a supervised learning task where the model predicts discrete categories such as spam or not spam, fraudulent or legitimate transactions, or disease diagnosis."
+            "number": 15,
+            "title": "Feature Engineering",
+            "start": 840,
+            "end": 900,
+            "text": "Feature engineering involves creating, selecting, and transforming input variables to improve model performance. Good features help machine learning algorithms understand important patterns and relationships within the dataset."
         },
         {
-            "text": "Regression is another supervised learning task where the model predicts continuous numerical values such as house prices, stock prices, temperature, or sales forecasts."
+            "number": 16,
+            "title": "Training and Testing Data",
+            "start": 900,
+            "end": 960,
+            "text": "Machine learning datasets are commonly divided into training, validation, and testing sets. Training data is used to learn patterns, validation data helps tune models, and testing data evaluates how well the model performs on unseen examples."
         },
         {
-            "text": "Popular supervised learning algorithms include Linear Regression, Logistic Regression, Decision Trees, Random Forests, Support Vector Machines (SVM), Naive Bayes, K-Nearest Neighbors (KNN), Gradient Boosting, XGBoost, LightGBM, and Neural Networks."
+            "number": 17,
+            "title": "Model Evaluation",
+            "start": 960,
+            "end": 1020,
+            "text": "Model evaluation measures how accurately a machine learning system performs. Different metrics are used depending on the task, including accuracy, precision, recall, F1-score, mean squared error, and area under the curve."
         },
         {
-            "text": "Unsupervised learning works with unlabeled data and attempts to discover hidden patterns, structures, or relationships without predefined output labels."
+            "number": 18,
+            "title": "Overfitting and Underfitting",
+            "start": 1020,
+            "end": 1080,
+            "text": "Overfitting occurs when a model learns training data too closely and performs poorly on new examples. Underfitting happens when a model is too simple to capture important patterns. Balancing model complexity helps achieve better generalization."
         },
         {
-            "text": "Clustering is a common unsupervised learning technique that groups similar data points together. Popular clustering algorithms include K-Means, DBSCAN, Agglomerative Clustering, and Gaussian Mixture Models."
+            "number": 19,
+            "title": "Cross Validation",
+            "start": 1080,
+            "end": 1140,
+            "text": "Cross validation is a technique used to estimate model performance by dividing data into multiple training and validation groups. It provides a more reliable evaluation and helps reduce the risk of selecting a model based on random data variations."
         },
         {
-            "text": "Dimensionality reduction reduces the number of input features while preserving important information. Common techniques include Principal Component Analysis (PCA), t-SNE, and UMAP."
+            "number": 20,
+            "title": "Hyperparameter Optimization",
+            "start": 1140,
+            "end": 1200,
+            "text": "Hyperparameters control the behavior of machine learning algorithms and are set before training begins. Optimization methods such as grid search and random search help identify the best parameter combinations for improved performance."
         },
         {
-            "text": "Semi-supervised learning combines a small amount of labeled data with a much larger amount of unlabeled data. It is useful when labeling data is expensive or time-consuming."
+            "number": 21,
+            "title": "Decision Trees",
+            "start": 1200,
+            "end": 1260,
+            "text": "Decision Trees are supervised learning models that make predictions by splitting data based on feature values. They are easy to interpret and can be used for both classification and regression tasks."
         },
         {
-            "text": "Reinforcement Learning trains an intelligent agent by allowing it to interact with an environment. The agent learns through trial and error by receiving rewards for good actions and penalties for poor actions."
+            "number": 22,
+            "title": "Random Forest Models",
+            "start": 1260,
+            "end": 1320,
+            "text": "Random Forest is an ensemble learning method that combines multiple decision trees to improve accuracy and reduce overfitting. Each tree makes predictions independently, and the final result is determined through voting or averaging."
         },
         {
-            "text": "Key concepts in Reinforcement Learning include the agent, environment, state, action, reward, policy, value function, and Q-learning. Deep Reinforcement Learning combines neural networks with reinforcement learning algorithms."
+            "number": 23,
+            "title": "Support Vector Machines",
+            "start": 1320,
+            "end": 1380,
+            "text": "Support Vector Machines create decision boundaries that separate different classes of data. They are effective for classification problems and can handle complex datasets using different kernel functions."
         },
         {
-            "text": "Feature engineering is the process of selecting, creating, and transforming input variables to improve the performance of machine learning models. Good features often have a greater impact than choosing a more complex algorithm."
+            "number": 24,
+            "title": "Neural Networks",
+            "start": 1380,
+            "end": 1440,
+            "text": "Neural networks are computing systems inspired by the structure of the human brain. They consist of interconnected layers of artificial neurons that learn complex patterns from large amounts of data."
         },
         {
-            "text": "Feature scaling techniques such as Min-Max Scaling and Standardization help algorithms converge faster and improve performance, especially for distance-based methods like KNN and SVM."
+            "number": 25,
+            "title": "Deep Learning",
+            "start": 1440,
+            "end": 1500,
+            "text": "Deep learning is a specialized branch of machine learning that uses multi-layer neural networks. It is widely used in computer vision, natural language processing, speech recognition, and autonomous systems."
         },
         {
-            "text": "The machine learning workflow typically includes problem definition, data collection, data cleaning, exploratory data analysis, feature engineering, model selection, training, evaluation, hyperparameter tuning, deployment, and monitoring."
+            "number": 26,
+            "title": "Natural Language Processing",
+            "start": 1500,
+            "end": 1560,
+            "text": "Natural Language Processing enables computers to understand, interpret, and generate human language. Machine learning techniques are used for translation, sentiment analysis, chatbots, text classification, and information extraction."
         },
         {
-            "text": "Training data is used to teach a machine learning model, validation data is used to tune hyperparameters, and test data is used to evaluate how well the trained model generalizes to unseen examples."
+            "number": 27,
+            "title": "Computer Vision",
+            "start": 1560,
+            "end": 1620,
+            "text": "Computer Vision allows machines to interpret and analyze visual information from images and videos. Machine learning models are used for object detection, facial recognition, medical image analysis, and autonomous navigation systems."
         },
         {
-            "text": "Overfitting occurs when a model memorizes the training data instead of learning general patterns, leading to poor performance on new data. Underfitting occurs when a model is too simple to capture important relationships."
+            "number": 28,
+            "title": "Recommendation Systems",
+            "start": 1620,
+            "end": 1680,
+            "text": "Recommendation systems use machine learning algorithms to suggest products, movies, music, or content based on user behavior and preferences. They are commonly used by online platforms to personalize user experiences."
         },
         {
-            "text": "Regularization techniques such as L1 (Lasso), L2 (Ridge), Elastic Net, dropout, early stopping, and data augmentation help reduce overfitting and improve model generalization."
+            "number": 29,
+            "title": "Model Deployment",
+            "start": 1680,
+            "end": 1740,
+            "text": "Model deployment involves integrating trained machine learning models into real-world applications. Deployment requires monitoring performance, managing updates, ensuring scalability, and maintaining reliable predictions over time."
         },
         {
-            "text": "Cross-validation is a model evaluation technique that repeatedly splits data into training and validation sets. K-Fold Cross Validation provides a more reliable estimate of model performance than a single train-test split."
+            "number": 30,
+            "title": "Machine Learning Ethics",
+            "start": 1740,
+            "end": 1800,
+            "text": "Machine learning ethics focuses on fairness, transparency, privacy, accountability, and responsible use of artificial intelligence systems. Developers must consider potential biases and societal impacts when creating ML solutions."
         },
         {
-            "text": "Hyperparameters are settings configured before training begins, such as learning rate, batch size, number of trees, maximum tree depth, or the number of neural network layers. Hyperparameter tuning methods include Grid Search, Random Search, and Bayesian Optimization."
+            "number": 31,
+            "title": "Applications of Machine Learning",
+            "start": 1800,
+            "end": 1860,
+            "text": "Machine learning is applied across many industries including healthcare, finance, education, transportation, agriculture, cybersecurity, and entertainment. These applications help automate decisions, discover insights, and improve efficiency."
         },
         {
-            "text": "Common evaluation metrics for classification models include Accuracy, Precision, Recall, F1 Score, ROC-AUC, Confusion Matrix, and Log Loss. The choice of metric depends on the problem and class distribution."
-        },
-        {
-            "text": "Regression models are commonly evaluated using Mean Squared Error (MSE), Root Mean Squared Error (RMSE), Mean Absolute Error (MAE), Mean Absolute Percentage Error (MAPE), and R-squared (R²)."
-        },
-        {
-            "text": "Ensemble learning combines multiple machine learning models to produce better predictions than individual models. Popular ensemble techniques include Bagging, Boosting, Stacking, Random Forest, AdaBoost, XGBoost, CatBoost, and LightGBM."
-        },
-        {
-            "text": "Deep Learning is a specialized branch of Machine Learning that uses multi-layer artificial neural networks. Deep learning has achieved remarkable success in computer vision, speech recognition, natural language processing, recommendation systems, and generative AI."
-        },
-        {
-            "text": "Machine Learning is widely used in fraud detection, recommendation systems, medical diagnosis, predictive maintenance, autonomous vehicles, customer segmentation, cybersecurity, demand forecasting, financial analysis, and personalized marketing."
-        },
-        {
-            "text": "Machine Learning models can be deployed using REST APIs, cloud platforms, Docker containers, Kubernetes, serverless functions, or edge devices. Continuous monitoring is essential to detect model drift and maintain prediction quality."
-        },
-        {
-            "text": "Popular Machine Learning libraries include Scikit-learn for traditional ML algorithms, TensorFlow and PyTorch for deep learning, XGBoost and LightGBM for gradient boosting, Pandas for data manipulation, NumPy for numerical computing, and Matplotlib or Seaborn for visualization."
-        },
-        {
-            "text": "Ethical Machine Learning involves reducing bias, protecting user privacy, ensuring fairness, improving explainability, maintaining transparency, and developing models that are reliable, secure, and accountable."
+            "number": 32,
+            "title": "Future of Machine Learning",
+            "start": 1860,
+            "end": 1920,
+            "text": "The future of machine learning includes advances in generative AI, autonomous systems, explainable models, and efficient algorithms. Continued research aims to create systems that are more accurate, adaptable, and beneficial for society."
         }
     ]
 }

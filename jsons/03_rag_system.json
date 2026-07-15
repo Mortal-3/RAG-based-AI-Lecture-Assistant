@@ -3,97 +3,228 @@
     "title": "Retrieval-Augmented Generation (RAG)",
     "chunks": [
         {
+            "number": 1,
+            "title": "Introduction to RAG",
+            "start": 0,
+            "end": 60,
             "text": "Retrieval-Augmented Generation (RAG) is an AI architecture that combines information retrieval with Large Language Models (LLMs). Instead of relying only on the model's internal knowledge, RAG retrieves relevant information from external documents before generating a response."
         },
         {
+            "number": 2,
+            "title": "Objectives of RAG",
+            "start": 60,
+            "end": 120,
             "text": "The primary objective of RAG is to improve answer accuracy, reduce hallucinations, and allow language models to answer questions using up-to-date or domain-specific knowledge stored outside the model."
         },
         {
+            "number": 3,
+            "title": "RAG Pipeline Architecture",
+            "start": 120,
+            "end": 180,
             "text": "A typical RAG pipeline consists of document collection, text preprocessing, document chunking, embedding generation, vector database storage, user query embedding, similarity search, context retrieval, prompt construction, and response generation using an LLM."
         },
         {
+            "number": 4,
+            "title": "Supported Document Sources",
+            "start": 180,
+            "end": 240,
             "text": "Documents used in RAG can include PDFs, Word documents, HTML pages, websites, emails, CSV files, JSON files, Markdown files, knowledge bases, and databases. These documents are converted into searchable chunks."
         },
         {
+            "number": 5,
+            "title": "Document Chunking",
+            "start": 240,
+            "end": 300,
             "text": "Document chunking is the process of splitting large documents into smaller pieces before creating embeddings. Smaller chunks improve retrieval precision because each embedding represents a focused topic."
         },
         {
+            "number": 6,
+            "title": "Chunking Strategies",
+            "start": 300,
+            "end": 360,
             "text": "Chunking strategies include fixed-size chunking, sentence-based chunking, paragraph-based chunking, recursive chunking, semantic chunking, and sliding window chunking with overlapping text."
         },
         {
+            "number": 7,
+            "title": "Chunk Overlap",
+            "start": 360,
+            "end": 420,
             "text": "Chunk overlap is commonly used in RAG systems to preserve context between adjacent chunks. An overlap of 10% to 30% often helps prevent important information from being split across chunk boundaries."
         },
         {
+            "number": 8,
+            "title": "Text Embeddings",
+            "start": 420,
+            "end": 480,
             "text": "Embeddings are dense numerical vectors that represent the semantic meaning of text. Similar pieces of text produce similar vectors, enabling semantic search instead of keyword matching."
         },
         {
+            "number": 9,
+            "title": "Embedding Models",
+            "start": 480,
+            "end": 540,
             "text": "Popular embedding models include BGE-M3, BGE Large, Sentence Transformers, E5, OpenAI text-embedding models, Nomic Embed, Jina Embeddings, and multilingual embedding models."
         },
         {
+            "number": 10,
+            "title": "Vector Storage and Metadata",
+            "start": 540,
+            "end": 600,
             "text": "After embeddings are generated, they are stored in a vector database for efficient similarity search. Each vector is usually stored along with metadata such as document ID, title, source file, page number, author, and chunk ID."
         },
         {
+            "number": 11,
+            "title": "Vector Databases",
+            "start": 600,
+            "end": 660,
             "text": "Popular vector databases include FAISS, ChromaDB, Pinecone, Milvus, Weaviate, Qdrant, Elasticsearch Vector Search, LanceDB, and Redis Vector Search."
         },
         {
+            "number": 12,
+            "title": "Approximate Nearest Neighbor Search",
+            "start": 660,
+            "end": 720,
             "text": "Vector databases use Approximate Nearest Neighbor (ANN) search algorithms such as HNSW, IVF, and Product Quantization to efficiently search millions of vectors with low latency."
         },
         {
+            "number": 13,
+            "title": "Similarity Metrics",
+            "start": 720,
+            "end": 780,
             "text": "Similarity between vectors is commonly measured using cosine similarity, Euclidean distance, or dot product. Cosine similarity is one of the most widely used metrics for semantic text retrieval."
         },
         {
+            "number": 14,
+            "title": "Query Embedding",
+            "start": 780,
+            "end": 840,
             "text": "When a user submits a question, the same embedding model used for the documents converts the query into a vector. This query embedding is then compared with document embeddings stored in the vector database."
         },
         {
+            "number": 15,
+            "title": "Top-K Retrieval",
+            "start": 840,
+            "end": 900,
             "text": "The vector database retrieves the top-k most similar chunks based on similarity scores. Typical values for k range from 3 to 10 depending on the application and context window available to the language model."
         },
         {
+            "number": 16,
+            "title": "Context Generation",
+            "start": 900,
+            "end": 960,
             "text": "Retrieved chunks are combined into a prompt and supplied as context to the Large Language Model. The model generates its response using both the retrieved context and its pretrained knowledge."
         },
         {
+            "number": 17,
+            "title": "Prompt Engineering for RAG",
+            "start": 960,
+            "end": 1020,
             "text": "Prompt engineering is important in RAG systems. Prompts often instruct the model to answer only using the retrieved context and to indicate when sufficient information is unavailable."
         },
         {
+            "number": 18,
+            "title": "Metadata Filtering",
+            "start": 1020,
+            "end": 1080,
             "text": "Metadata filtering allows retrieval to be restricted based on document attributes such as category, author, department, publication date, language, product name, or document type."
         },
         {
+            "number": 19,
+            "title": "Hybrid Search",
+            "start": 1080,
+            "end": 1140,
             "text": "Hybrid search combines semantic vector search with traditional keyword-based search such as BM25. This approach often improves retrieval performance for technical terms, product codes, and exact phrases."
         },
         {
+            "number": 20,
+            "title": "Reranking Models",
+            "start": 1140,
+            "end": 1200,
             "text": "Reranking models improve retrieval quality by reordering the initially retrieved documents according to their relevance. Cross-encoder rerankers are commonly used after vector search."
         },
         {
+            "number": 21,
+            "title": "Context Compression",
+            "start": 1200,
+            "end": 1260,
             "text": "Context compression techniques reduce unnecessary text before sending retrieved chunks to the language model. This helps reduce token usage while preserving the most relevant information."
         },
         {
+            "number": 22,
+            "title": "Multi Query Retrieval",
+            "start": 1260,
+            "end": 1320,
             "text": "Multi-query retrieval generates several reformulated versions of the user's question, retrieves documents for each variation, and combines the results to improve recall."
         },
         {
+            "number": 23,
+            "title": "Parent Child Retrieval",
+            "start": 1320,
+            "end": 1380,
             "text": "Parent-child retrieval stores small chunks for embedding while returning larger parent documents as context. This improves retrieval precision while preserving broader context for answer generation."
         },
         {
+            "number": 24,
+            "title": "Graph RAG",
+            "start": 1380,
+            "end": 1440,
             "text": "Graph RAG extends traditional RAG by incorporating knowledge graphs and entity relationships, allowing the system to reason over connected information instead of isolated document chunks."
         },
         {
+            "number": 25,
+            "title": "Agentic RAG",
+            "start": 1440,
+            "end": 1500,
             "text": "Agentic RAG combines autonomous AI agents with retrieval systems. Agents can plan, retrieve information from multiple sources, call external tools, and verify intermediate results before producing a final answer."
         },
         {
+            "number": 26,
+            "title": "Multimodal RAG",
+            "start": 1500,
+            "end": 1560,
             "text": "Multimodal RAG extends retrieval beyond text by incorporating images, audio, video, diagrams, tables, and PDFs. Embeddings are generated for multiple data types to support richer search experiences."
         },
         {
+            "number": 27,
+            "title": "Reducing Hallucinations",
+            "start": 1560,
+            "end": 1620,
             "text": "RAG systems significantly reduce hallucinations because answers are grounded in retrieved documents rather than relying solely on the language model's internal parameters."
         },
         {
+            "number": 28,
+            "title": "Private Knowledge Integration",
+            "start": 1620,
+            "end": 1680,
             "text": "RAG allows organizations to use private or proprietary data without retraining the underlying language model. Updating the knowledge base only requires re-indexing documents instead of retraining the model."
         },
         {
+            "number": 29,
+            "title": "RAG Applications",
+            "start": 1680,
+            "end": 1740,
             "text": "Common applications of RAG include enterprise search, customer support chatbots, legal document analysis, healthcare assistants, software documentation search, financial research, educational tutoring, and question-answering systems."
         },
         {
+            "number": 30,
+            "title": "RAG Evaluation Metrics",
+            "start": 1740,
+            "end": 1800,
             "text": "Evaluating a RAG system involves measuring retrieval quality and generation quality. Common metrics include Precision@K, Recall@K, Mean Reciprocal Rank (MRR), Normalized Discounted Cumulative Gain (NDCG), answer relevance, faithfulness, and groundedness."
         },
         {
+            "number": 31,
+            "title": "RAG Challenges",
+            "start": 1800,
+            "end": 1860,
             "text": "Challenges in RAG include poor chunking strategies, low-quality embeddings, incorrect retrieval, context window limitations, duplicate documents, stale knowledge bases, and inefficient indexing. Regular evaluation and document updates improve overall system performance."
+        },
+        {
+            "number": 32,
+            "title": "Future of RAG Systems",
+            "start": 1860,
+            "end": 1920,
+            "text": "Future RAG systems will focus on better reasoning, autonomous retrieval, multimodal understanding, adaptive indexing, improved evaluation methods, and deeper integration with AI agents and enterprise workflows."
         }
     ]
 }

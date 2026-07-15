@@ -3,64 +3,214 @@
     "title": "Artificial Intelligence Basics",
     "chunks": [
         {
-            "text": "Artificial Intelligence (AI) is a branch of computer science that focuses on building systems capable of performing tasks that normally require human intelligence. These tasks include reasoning, learning, problem-solving, decision-making, understanding language, and recognizing images."
+            "number": 1,
+            "title": "Introduction to Artificial Intelligence",
+            "start": 0,
+            "end": 60,
+            "text": "Artificial Intelligence (AI) is a branch of computer science that focuses on creating machines and software systems capable of performing tasks that normally require human intelligence. These tasks include reasoning, learning from experience, solving complex problems, making decisions, understanding natural language, recognizing patterns, and interpreting images. AI systems are designed to simulate human cognitive abilities and improve their performance by analyzing large amounts of data. Modern AI is used in many applications including virtual assistants, search engines, recommendation systems, autonomous vehicles, and intelligent automation platforms."
         },
         {
-            "text": "AI can be categorized into Narrow AI, General AI, and Super AI. Narrow AI is designed for a specific task such as voice assistants or recommendation systems. Artificial General Intelligence (AGI) refers to machines with human-level intelligence across many domains and remains a research goal. Super AI is a hypothetical form of intelligence that would surpass human intelligence."
+            "number": 2,
+            "title": "Categories of Artificial Intelligence",
+            "start": 60,
+            "end": 120,
+            "text": "Artificial Intelligence can be categorized into three major types: Narrow AI, Artificial General Intelligence, and Super AI. Narrow AI refers to systems designed to perform specific tasks such as speech recognition, image classification, recommendation systems, and virtual assistants. Artificial General Intelligence, also called AGI, represents a theoretical machine capable of performing any intellectual task that a human can perform. Super AI is a hypothetical future form of intelligence that would exceed human abilities in reasoning, creativity, scientific discovery, and decision-making."
         },
         {
-            "text": "Machine Learning is a subset of Artificial Intelligence in which computers learn patterns from data instead of being explicitly programmed. Machine learning algorithms improve their performance as they are exposed to more data."
+            "number": 3,
+            "title": "Machine Learning Fundamentals",
+            "start": 120,
+            "end": 180,
+            "text": "Machine Learning is a major subset of Artificial Intelligence that enables computers to learn patterns from data without being explicitly programmed for every task. Instead of following fixed instructions, machine learning algorithms identify relationships within datasets and use those patterns to make predictions or decisions. Machine learning systems improve their accuracy as they receive more training examples. Applications include fraud detection, medical diagnosis, recommendation engines, customer analysis, and predictive maintenance."
         },
         {
-            "text": "Deep Learning is a subset of Machine Learning that uses artificial neural networks with multiple hidden layers. Deep learning has achieved state-of-the-art performance in computer vision, speech recognition, natural language processing, and generative AI."
+            "number": 4,
+            "title": "Deep Learning and Neural Networks",
+            "start": 180,
+            "end": 240,
+            "text": "Deep Learning is an advanced branch of Machine Learning that uses artificial neural networks inspired by the structure of the human brain. These networks contain multiple layers that automatically learn complex patterns from large datasets. Deep learning has achieved excellent results in computer vision, speech recognition, natural language processing, autonomous systems, and generative AI. Popular deep learning architectures include convolutional neural networks, recurrent neural networks, and transformer-based models."
         },
         {
-            "text": "Natural Language Processing (NLP) enables computers to understand, interpret, generate, and respond to human language. Applications include chatbots, machine translation, text summarization, sentiment analysis, and question-answering systems."
+            "number": 5,
+            "title": "Natural Language Processing",
+            "start": 240,
+            "end": 300,
+            "text": "Natural Language Processing (NLP) is an area of Artificial Intelligence that allows computers to understand, process, generate, and communicate using human language. NLP combines linguistics, machine learning, and deep learning techniques to analyze text and speech. Common applications include chatbots, language translation, text summarization, sentiment analysis, information extraction, and question-answering systems. Modern NLP systems are powered by large language models that can understand context and generate human-like responses."
         },
         {
-            "text": "Computer Vision is a field of AI that enables computers to interpret and analyze images and videos. It is widely used in facial recognition, medical imaging, autonomous driving, quality inspection, and object detection."
+            "number": 6,
+            "title": "Computer Vision",
+            "start": 300,
+            "end": 360,
+            "text": "Computer Vision is a field of Artificial Intelligence that enables computers to understand and analyze visual information from images and videos. AI models can identify objects, recognize faces, detect patterns, and interpret scenes using advanced image-processing techniques. Computer vision is widely used in healthcare for medical image analysis, in autonomous vehicles for navigation, in manufacturing for quality inspection, and in security systems for monitoring and identification."
         },
         {
-            "text": "Robotics combines Artificial Intelligence with mechanical engineering and electronics to create intelligent machines capable of interacting with the physical world. AI-powered robots are used in manufacturing, healthcare, logistics, agriculture, and space exploration."
+            "number": 7,
+            "title": "Artificial Intelligence in Robotics",
+            "start": 360,
+            "end": 420,
+            "text": "Robotics combines Artificial Intelligence with mechanical engineering, electronics, and computer science to create intelligent machines capable of interacting with the physical world. AI-powered robots can understand environments, make decisions, move independently, and perform complex tasks. Robotics applications include industrial automation, healthcare assistance, warehouse management, agriculture, exploration missions, and household automation. Intelligent robots continue to improve through machine learning and sensor-based perception."
         },
         {
-            "text": "Artificial Intelligence systems can be trained using supervised learning, unsupervised learning, semi-supervised learning, and reinforcement learning. Each learning method is suitable for different types of problems and available data."
+            "number": 8,
+            "title": "AI Learning Methods",
+            "start": 420,
+            "end": 480,
+            "text": "Artificial Intelligence systems can learn using different approaches including supervised learning, unsupervised learning, semi-supervised learning, and reinforcement learning. Each method is designed for different types of problems depending on available data and desired outcomes. Selecting the appropriate learning approach is important because it affects model accuracy, efficiency, and ability to generalize to new situations."
         },
         {
-            "text": "Supervised learning uses labeled datasets where the correct output is known. Common algorithms include Linear Regression, Logistic Regression, Decision Trees, Random Forests, Support Vector Machines, and Neural Networks."
+            "number": 9,
+            "title": "Supervised Learning",
+            "start": 480,
+            "end": 540,
+            "text": "Supervised learning is a machine learning approach where models are trained using labeled datasets containing input examples and their correct outputs. The algorithm learns the relationship between inputs and outputs and uses this knowledge to predict results for new data. Common supervised learning algorithms include Linear Regression, Logistic Regression, Decision Trees, Random Forests, Support Vector Machines, and Neural Networks. Supervised learning is widely used for classification and prediction problems."
         },
         {
-            "text": "Unsupervised learning discovers hidden patterns in unlabeled data. Popular techniques include clustering algorithms such as K-Means and DBSCAN, as well as dimensionality reduction methods like Principal Component Analysis (PCA)."
+            "number": 10,
+            "title": "Unsupervised Learning",
+            "start": 540,
+            "end": 600,
+            "text": "Unsupervised learning allows AI systems to discover hidden structures and patterns in data without predefined labels. These algorithms analyze datasets and identify similarities, groups, or important features automatically. Common unsupervised learning techniques include clustering methods such as K-Means and DBSCAN, along with dimensionality reduction approaches like Principal Component Analysis. These techniques are useful for customer segmentation, anomaly detection, and data exploration."
+        }
+        {
+            "number": 11,
+            "title": "Reinforcement Learning",
+            "start": 600,
+            "end": 660,
+            "text": "Reinforcement Learning is a machine learning approach where an intelligent agent learns by interacting with an environment. The agent receives rewards for correct actions and penalties for incorrect actions. Over time, it learns strategies that maximize long-term rewards. Reinforcement learning is used in robotics, autonomous vehicles, recommendation systems, and complex decision-making applications."
         },
         {
-            "text": "Reinforcement Learning trains an agent by rewarding desirable actions and penalizing undesirable ones. It is commonly used in robotics, autonomous vehicles, recommendation systems, and game-playing AI such as AlphaGo."
+            "number": 12,
+            "title": "Generative Artificial Intelligence",
+            "start": 660,
+            "end": 720,
+            "text": "Generative AI refers to artificial intelligence models that can create new content including text, images, audio, video, and computer code. Unlike traditional AI systems that mainly analyze information, generative models can produce original outputs based on patterns learned from training data."
         },
         {
-            "text": "Generative AI refers to AI models capable of creating new content such as text, images, videos, music, and computer code. Popular examples include ChatGPT, Claude, Gemini, Llama, Stable Diffusion, and DALL-E."
+            "number": 13,
+            "title": "Large Language Models",
+            "start": 720,
+            "end": 780,
+            "text": "Large Language Models, also called LLMs, are deep learning models trained on massive collections of text data. They learn relationships between words, sentences, and concepts to generate meaningful responses. LLMs are used for question answering, writing assistance, translation, summarization, and programming support."
         },
         {
-            "text": "Large Language Models (LLMs) are deep learning models trained on massive amounts of text data. They can answer questions, summarize documents, generate code, translate languages, and assist with writing. Transformer architecture is the foundation of modern LLMs."
+            "number": 14,
+            "title": "Transformer Architecture",
+            "start": 780,
+            "end": 840,
+            "text": "Transformer architecture is the foundation behind modern language models. Transformers use attention mechanisms to understand relationships between different parts of a sequence. This allows models to process large amounts of text efficiently and understand complex context."
         },
         {
-            "text": "Embeddings are numerical vector representations of text, images, or other data. Similar pieces of information produce similar vectors, making embeddings useful for semantic search, recommendation systems, clustering, and Retrieval-Augmented Generation (RAG)."
+            "number": 15,
+            "title": "AI Embeddings",
+            "start": 840,
+            "end": 900,
+            "text": "Embeddings are numerical representations of information such as text, images, or audio. They convert complex data into vectors that capture semantic meaning. Similar concepts produce similar vector representations, making embeddings useful for search systems and recommendation engines."
         },
         {
-            "text": "Vector databases store high-dimensional embeddings and enable fast similarity searches using metrics such as cosine similarity, Euclidean distance, or dot product. Popular vector databases include FAISS, ChromaDB, Milvus, Pinecone, Weaviate, and Qdrant."
+            "number": 16,
+            "title": "Semantic Search",
+            "start": 900,
+            "end": 960,
+            "text": "Semantic search uses AI embeddings to understand the meaning behind user queries instead of relying only on exact keyword matches. It retrieves information based on similarity and context, improving search accuracy in applications such as document retrieval and knowledge management systems."
         },
         {
-            "text": "Retrieval-Augmented Generation (RAG) combines vector search with Large Language Models. User queries are converted into embeddings, relevant documents are retrieved from a vector database, and the retrieved context is supplied to the language model to generate accurate answers."
+            "number": 17,
+            "title": "Vector Databases",
+            "start": 960,
+            "end": 1020,
+            "text": "Vector databases are specialized databases designed to store and search high-dimensional vectors. They enable fast similarity searches using methods such as cosine similarity and Euclidean distance. Popular vector databases include FAISS, ChromaDB, Pinecone, Milvus, Weaviate, and Qdrant."
         },
         {
-            "text": "Artificial Intelligence is widely used across industries including healthcare, finance, education, cybersecurity, retail, manufacturing, transportation, agriculture, entertainment, and scientific research. AI improves automation, decision-making, and operational efficiency."
+            "number": 18,
+            "title": "Retrieval Augmented Generation",
+            "start": 1020,
+            "end": 1080,
+            "text": "Retrieval-Augmented Generation, commonly called RAG, combines information retrieval with large language models. A user's question is converted into an embedding, relevant documents are retrieved from a vector database, and the retrieved information is provided to the language model to generate accurate responses."
         },
         {
-            "text": "Developing AI systems involves several stages including data collection, data cleaning, feature engineering, model training, evaluation, deployment, monitoring, and continuous improvement. The quality of the training data significantly affects model performance."
+            "number": 19,
+            "title": "AI Applications in Healthcare",
+            "start": 1080,
+            "end": 1140,
+            "text": "Artificial Intelligence is transforming healthcare through medical image analysis, disease prediction, drug discovery, patient monitoring, and personalized treatment recommendations. AI systems help doctors analyze large amounts of medical information and improve healthcare efficiency."
         },
         {
-            "text": "Common evaluation metrics for AI and machine learning models include Accuracy, Precision, Recall, F1 Score, ROC-AUC, Mean Squared Error (MSE), Mean Absolute Error (MAE), and Root Mean Squared Error (RMSE). Different metrics are appropriate for different tasks."
+            "number": 20,
+            "title": "AI Applications in Finance",
+            "start": 1140,
+            "end": 1200,
+            "text": "The financial industry uses AI for fraud detection, risk assessment, algorithmic trading, customer support, and financial forecasting. Machine learning models analyze transaction patterns and identify suspicious activities quickly."
         },
         {
-            "text": "Artificial Intelligence also presents challenges including bias in training data, privacy concerns, explainability, model hallucinations, security risks, computational costs, and ethical considerations. Responsible AI practices aim to build systems that are fair, transparent, secure, and trustworthy."
+            "number": 21,
+            "title": "AI in Education",
+            "start": 1200,
+            "end": 1260,
+            "text": "AI improves education through personalized learning systems, automated grading, intelligent tutoring systems, and educational assistants. AI tools can adapt learning materials according to student performance and provide customized feedback."
+        },
+        {
+            "number": 22,
+            "title": "AI in Cybersecurity",
+            "start": 1260,
+            "end": 1320,
+            "text": "Artificial Intelligence helps cybersecurity systems detect threats, identify unusual network behavior, and prevent attacks. Machine learning models analyze security data and recognize patterns associated with malware, fraud, and unauthorized access."
+        },
+        {
+            "number": 23,
+            "title": "AI Development Process",
+            "start": 1320,
+            "end": 1380,
+            "text": "Developing an AI system involves multiple stages including problem definition, data collection, data preprocessing, model selection, training, testing, deployment, and monitoring. Each stage plays an important role in creating reliable AI solutions."
+        },
+        {
+            "number": 24,
+            "title": "Data Collection and Preparation",
+            "start": 1380,
+            "end": 1440,
+            "text": "High-quality data is essential for successful AI models. Data preparation includes collecting information, removing errors, handling missing values, and transforming data into a suitable format for machine learning algorithms."
+        },
+        {
+            "number": 25,
+            "title": "AI Model Training",
+            "start": 1440,
+            "end": 1500,
+            "text": "Model training is the process where AI algorithms learn patterns from available data. During training, models adjust internal parameters to reduce errors and improve prediction accuracy."
+        },
+        {
+            "number": 26,
+            "title": "AI Model Evaluation",
+            "start": 1500,
+            "end": 1560,
+            "text": "AI models are evaluated using performance metrics such as accuracy, precision, recall, F1-score, mean squared error, and other measurements. Evaluation helps determine whether a model performs well on new unseen data."
+        },
+        {
+            "number": 27,
+            "title": "AI Bias and Fairness",
+            "start": 1560,
+            "end": 1620,
+            "text": "AI systems can produce biased results if training data contains unfair patterns. Responsible AI development focuses on reducing bias, improving fairness, and ensuring that automated decisions do not negatively impact individuals or groups."
+        },
+        {
+            "number": 28,
+            "title": "AI Privacy and Security",
+            "start": 1620,
+            "end": 1680,
+            "text": "Artificial Intelligence systems often process large amounts of personal data, creating privacy and security challenges. Protecting user information and preventing unauthorized access are important aspects of responsible AI development."
+        },
+        {
+            "number": 29,
+            "title": "Future of Artificial Intelligence",
+            "start": 1680,
+            "end": 1740,
+            "text": "The future of Artificial Intelligence includes advancements in autonomous systems, human-AI collaboration, scientific discovery, and intelligent automation. Researchers continue working toward creating safer and more capable AI technologies."
+        },
+        {
+            "number": 30,
+            "title": "Conclusion of Artificial Intelligence Basics",
+            "start": 1740,
+            "end": 1800,
+            "text": "Artificial Intelligence has become one of the most important technologies of modern computing. From machine learning and deep learning to generative AI and robotics, AI continues to transform industries and influence how people interact with technology."
         }
     ]
 }
