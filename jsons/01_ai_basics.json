@@ -71,7 +71,7 @@
             "start": 540,
             "end": 600,
             "text": "Unsupervised learning allows AI systems to discover hidden structures and patterns in data without predefined labels. These algorithms analyze datasets and identify similarities, groups, or important features automatically. Common unsupervised learning techniques include clustering methods such as K-Means and DBSCAN, along with dimensionality reduction approaches like Principal Component Analysis. These techniques are useful for customer segmentation, anomaly detection, and data exploration."
-        }
+        },
         {
             "number": 11,
             "title": "Reinforcement Learning",
